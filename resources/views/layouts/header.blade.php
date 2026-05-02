@@ -10,8 +10,8 @@
     <!-- Menú de navegación (le ponemos un ID para buscarlo en JavaScript) -->
     <nav id="menuNavegacion">
         <a href="/">Inicio</a>
-        <a href="/catalogo">Catálogo de Animales</a>
-        <a href="/contacto">Contacto</a>
+        <a href="/catalogo">Repositorio de Mascotas</a>
+        <a href="/contacto">Soporte</a>
 
         <!-- LÓGICA DE USUARIOS -->
         @if (Route::has('login'))
