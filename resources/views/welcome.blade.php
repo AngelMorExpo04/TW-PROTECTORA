@@ -8,9 +8,15 @@
 </head>
 <body>
 
-    <!-- INCLUIMOS LA CABECERA -->
+    <!-- La cabecera flota sobre toda la página -->
     @include('layouts.header')
 
+    <!-- La foto empezará desde arriba del todo -->
+    <div class="seccion-portada" style="padding-top: 100px;">
+        <div class="contenido-portada">
+            <h2>Dales una segunda oportunidad </h2>
+        </div>
+    </div>
     <div class="contenedor-principal">
         
         <!-- MENÚ LATERAL -->
