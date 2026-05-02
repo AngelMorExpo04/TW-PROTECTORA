@@ -1,0 +1,275 @@
+/* ========================================================
+   ESTILOS GENERALES DEL PROYECTO (Protectora)
+   Requisito: Separación entre HTML y estilos
+   ======================================================== */
+
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* 1. Menú Superior (Efecto Cristal REAL y Bordes Redondeados) */
+header { 
+    /* EFECTO CRISTAL MEJORADO */
+    background: rgba(191, 193, 191, 0.532); /* Más transparente (0.45 en vez de 0.75) */
+    backdrop-filter: saturate(180%) blur(20px); /* Más desenfoque y un poco de saturación */
+    -webkit-backdrop-filter: saturate(180%) blur(20px); /* Para navegadores Apple */
+    border: 1px solid rgba(15, 42, 22, 0.5); /* Borde blanco un poco más marcado (reflejo) */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4); /* Sombra flotante para dar volumen 3D */
+    
+    border-radius: 20px;
+    margin: 15px; 
+    color: rgb(4, 15, 3); 
+    padding: 1rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: relative; 
+    z-index: 1000; 
+}
+
+/* Título más grande en ordenador */
+header h1 {
+    margin: 0;
+    font-size: 2.2rem; /* Escala el título más grande */
+    letter-spacing: 1px; /* Separa un pelín las letras para que respire */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Sombrita para que se lea mejor sobre el cristal */
+}
+
+nav a { 
+    color: rgb(4, 15, 3); 
+    text-decoration: none; 
+    margin-left: 15px; 
+    font-weight: bold; 
+    transition: color 0.3s ease;
+    position: relative; /* ¡Muy importante para que la línea sepa dónde colocarse! */
+}
+
+nav a:hover {
+    color: #123c1c; 
+}
+
+/* La magia de la línea que aparece debajo */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Al principio no tiene ancho (no se ve) */
+    height: 2px; /* Grosor de la línea */
+    bottom: -5px; /* La bajamos un poquito para que no tache el texto */
+    left: 0;
+    background-color: rgb(21, 66, 31);
+    transition: width 0.3s ease; /* Esto hace que se dibuje suavemente */
+}
+
+nav a:hover::after {
+    width: 100%; /* Al pasar el ratón, la línea crece hasta ocupar todo el texto */
+}
+
+/* Evitamos que al botón blanco de "Mi Perfil" le salga la línea porque queda raro */
+nav a.btn-perfil::after {
+    display: none;
+}
+
+/* Estilos para el logo de la cabecera */
+.zona-logo {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+}
+
+.logo-cabecera {
+    height: 50px; 
+    width: auto;
+}
+
+/* Botón especial para el perfil del usuario */
+nav a.btn-perfil {
+    background: rgb(4, 15, 3); 
+    color: #4CAF50; 
+    padding: 8px 15px; 
+    border-radius: 20px;
+}
+
+/* =========================================
+   DISEÑO PARA MÓVILES (Menú Hamburguesa)
+   ========================================= */
+
+/* Botón de las 3 líneas (oculto en ordenador) */
+/* Botón de las 3 líneas (oculto en ordenador) */
+.btn-menu {
+    display: none; /* Se mantiene oculto en ordenador */
+    
+    /* Diseño del cuadrado */
+    background: rgba(19, 77, 43, 0.751); /* Un fondo blanco semitransparente */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordecito blanco */
+    border-radius: 10px; /* Esquinas ligeramente redondeadas */
+    
+    /* Tamaño fijo para que sea un cuadrado perfecto */
+    width: 45px;
+    height: 45px;
+    
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Animación suave al pulsarlo */
+}
+
+/* Efecto al pasar el dedo/ratón por encima del botón */
+.btn-menu:hover {
+    background: rgba(17, 69, 41, 0.473);
+}
+
+/* Cuando la pantalla sea menor a 768px (móviles y tablets pequeñas) */
+@media (max-width: 768px) {
+    /* Hacemos el título más pequeño en móvil */
+    header h1 {
+        font-size: 1.4rem; 
+    }
+
+    .btn-menu {
+        display: flex; /* Usamos flexbox para poder centrar el icono */
+        align-items: center; /* Centra verticalmente */
+        justify-content: center; /* Centra horizontalmente */
+    }
+
+    header nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        right: 0; 
+        left: auto; 
+        width: 220px; 
+        
+        /* --- LA LÍNEA VERDE SUPERIOR (Donde marcaste en rojo) --- */
+        border-top: 5px solid rgb(26, 80, 37); 
+        
+        /* --- FONDO BLANCO CASI TRANSPARENTE --- */
+        background: rgba(237, 236, 236, 0.84); /* Blanco con 35% de opacidad */
+        backdrop-filter: saturate(180%) blur(25px); /* Mucho desenfoque para que parezca cristal */
+        -webkit-backdrop-filter: saturate(180%) blur(25px);
+        
+        /* Bordes y sombras adaptados */
+        border-right: 1px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        border-left: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: -5px 10px 25px 0 rgba(0, 0, 0, 0.15); 
+        
+        border-radius: 0 0 15px 15px; 
+        padding: 1rem 0;
+        margin-top: 15px; 
+        text-align: left; 
+    }
+
+    header nav.activo {
+        display: flex;
+    }
+
+    header nav a {
+        margin: 15px 20px; 
+        display: inline-block; 
+        font-size: 1.1rem;
+        
+        /* --- TEXTO OSCURO PARA QUE DESTAQUE SOBRE EL FONDO BLANCO --- */
+        color: #333; 
+    }
+
+    /* Al pasar el dedo/ratón, el texto se pone verde */
+    header nav a:hover {
+        color: rgb(21, 66, 31);
+    }
+
+    /* Hacemos que la línea que aparece debajo al pasar el ratón también sea verde */
+    header nav a::after {
+        background-color: rgb(21, 66, 31); 
+    }
+}
+
+/* Estructura central */
+.contenedor-principal { 
+    display: flex; 
+    flex: 1; 
+}
+
+/* 2. Menú Lateral */
+aside { 
+    background: #f4f4f4; 
+    width: 250px; 
+    padding: 2rem 1rem; 
+    border-right: 1px solid #ddd; 
+}
+
+aside ul { 
+    list-style: none; 
+    padding: 0; 
+}
+
+aside li { 
+    margin-bottom: 15px; 
+}
+
+aside a { 
+    color: #333; 
+    text-decoration: none; 
+}
+
+aside a.enlace-admin {
+    color: red; 
+    font-weight: bold;
+}
+
+/* 3. Zona Central de Contenido */
+main { 
+    flex: 1; 
+    padding: 2rem; 
+    background: #ffffff; 
+}
+
+.caja-destacada {
+    border: 2px dashed #4CAF50; 
+    padding: 30px; 
+    text-align: center; 
+    margin-top: 40px; 
+    border-radius: 10px;
+}
+
+.btn-principal {
+    background: #4CAF50; 
+    color: white; 
+    padding: 15px 25px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold;
+    display: inline-block; /* Para que coja bien el padding */
+    margin-top: 15px;
+}
+
+/* 4. Pie de Página */
+footer { 
+    background: #5f401ee5; 
+    color: white; 
+    text-align: center; 
+    padding: 1.5rem; 
+    margin-top: auto; 
+
+    box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+footer a { 
+    color: #101010; 
+    text-decoration: none; 
+}
+/* Estilos para el logo de la cabecera */
+.zona-logo {
+    display: flex;
+    align-items: center; /* Centra el logo y el texto verticalmente */
+    gap: 15px; /* Espacio entre el logo y el texto */
+}
+
+.logo-cabecera {
+    height: 50px; /* Ajusta este número para hacer el logo más grande o pequeño */
+    width: auto;
+}
