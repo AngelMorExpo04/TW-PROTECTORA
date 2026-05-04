@@ -1,32 +1,25 @@
 <header>
+    <!-- 1. ZONA DEL LOGO Y TÍTULO -->
     <div class="zona-logo">
         <img src="{{ asset('img/logo.png') }}" alt="Logo de la Protectora" class="logo-cabecera">
         <h1>GuauHub</h1>
     </div>
-    
-    <!-- Botón Hamburguesa (solo visible en móvil) -->
-    <button class="btn-menu" id="btnMenu">☰</button>
 
-    <!-- Menú de navegación (le ponemos un ID para buscarlo en JavaScript) -->
+    <!-- 4. MENÚ DE NAVEGACIÓN DESPLEGABLE -->
     <nav id="menuNavegacion">
         <a href="/">Inicio</a>
         <a href="/catalogo">Repositorio de Mascotas</a>
         <a href="/contacto">Soporte</a>
-
-        <!-- LÓGICA DE USUARIOS -->
-        @if (Route::has('login'))
-            @auth
-                <a href="{{ url('/dashboard') }}" class="btn-perfil">
-                    Mi Perfil ({{ Auth::user()->name }})
-                </a>
-            @else
-                <a href="{{ route('login') }}">Iniciar Sesión</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Registrarse</a>
-                @endif
-            @endauth
-        @endif
     </nav>
+    
+    <!-- 2. ZONA DE USUARIO (Sacada del nav) -->
+    <div class="zona-usuario">
+        <a href="#" class="btn-login">Iniciar Sesión</a>
+        <a href="#" class="btn-registro">Registrarse</a>
+    </div>
+
+    <!-- 3. BOTÓN HAMBURGUESA -->
+    <button class="btn-menu" id="btnMenu">☰</button>
 </header>
 
 <!-- SCRIPT para abrir/cerrar el menú en móvil -->

@@ -14,7 +14,7 @@ body {
 /* 1. Menú Superior (FIJO y ANTI-VERDE) */
 header { 
     /* ... mantén tus colores de fondo, blur y grayscale que pusimos antes ... */
-    background: rgba(255, 255, 255, 0.571); 
+    background: rgba(255, 255, 255, 0.267); 
     backdrop-filter: blur(20px) grayscale(1) brightness(1.3); 
     -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3); 
 
@@ -128,11 +128,7 @@ nav a.btn-perfil {
 }
 
 /* Cuando la pantalla sea menor a 768px (móviles y tablets pequeñas) */
-@media (max-width: 768px) {
-    /* Hacemos el título más pequeño en móvil */
-    header h1 {
-        font-size: 1.4rem; 
-    }
+@media (max-width: 990px) {   
 
     .btn-menu {
         display: flex; /* Usamos flexbox para poder centrar el icono */
@@ -140,37 +136,43 @@ nav a.btn-perfil {
         justify-content: center; /* Centra horizontalmente */
     }
 
+    
     header nav {
-        display: none; 
+        display: flex; 
         flex-direction: column;
         position: absolute;
         top: 100%; 
         right: 0; 
-        left: auto; 
         width: 220px; 
         
-        /* --- LA LÍNEA VERDE SUPERIOR (Donde marcaste en rojo) --- */
+        /* --- EL TRUCO PARA IGUALAR EL CRISTAL --- */
+        /* Subimos el blanco al 0.65 para compensar que el navegador anula el blur anidado */
+        background: rgba(255, 255, 255, 0.717); 
+        backdrop-filter: blur(20px) grayscale(1) brightness(1.3); 
+        -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
+        
         border-top: 5px solid rgb(26, 80, 37); 
-        
-        /* --- FONDO BLANCO CASI TRANSPARENTE --- */
-        background: rgba(237, 236, 236, 0.872); /* Blanco con 35% de opacidad */
-        backdrop-filter: saturate(180%) blur(25px); /* Mucho desenfoque para que parezca cristal */
-        -webkit-backdrop-filter: saturate(180%) blur(25px);
-        
-        /* Bordes y sombras adaptados */
-        border-right: 1px solid rgba(255, 255, 255, 0.6);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-        border-left: 1px solid rgba(255, 255, 255, 0.6);
-        box-shadow: -5px 10px 25px 0 rgba(0, 0, 0, 0.15); 
+        border-right: 1px solid rgb(255, 255, 255);
+        border-bottom: 1px solid rgb(255, 255, 255);
+        border-left: 1px solid rgb(255, 255, 255);
+        box-shadow: -5px 10px 25px 0 rgba(0, 0, 0, 0.3); 
         
         border-radius: 0 0 15px 15px; 
         padding: 1rem 0;
         margin-top: 15px; 
         text-align: left; 
+
+        /* MAGIA DE LA ANIMACIÓN */
+        opacity: 0; 
+        visibility: hidden; 
+        transform: translateY(-20px); 
+        transition: all 0.4s ease; 
     }
 
     header nav.activo {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); 
     }
 
     header nav a {
@@ -191,15 +193,51 @@ nav a.btn-perfil {
     header nav a::after {
         background-color: rgb(21, 66, 31); 
     }
+
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adaptación de la zona de usuario en móviles */
+    .zona-usuario {
+        margin-left: 0;
+        margin-top: 10px;
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        border-left: none; /* Quitamos la línea vertical */
+        border-top: 1px solid rgba(0, 0, 0, 0.1); /* Ponemos línea horizontal */
+        flex-direction: column; /* Ponemos los botones uno encima de otro */
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .zona-usuario a {
+        margin: 5px 0 !important;
+        width: 80%; /* Hacemos los botones más anchos y fáciles de pulsar */
+        text-align: center;
+    }
+}
+
+@media (max-width: 490px) {   
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Estructura central */
 .contenedor-principal { 
     display: flex; 
     flex: 1; 
-    margin-top: 20px; /* Ajusta este valor si necesitas más separación */
+    margin-top: 20px; 
+    
+    /* ESTO OBLIGA AL CENTRO A QUEDARSE EN EL FONDO */
+    position: relative;
+    z-index: 1; 
 }
-
 /* 2. Menú Lateral */
 aside { 
     background: #f4f4f4; 
@@ -231,7 +269,11 @@ aside a.enlace-admin {
 main { 
     flex: 1; 
     padding: 2rem; 
-    background: #ffffff; 
+    background: #FDFBF7; /* (O el color que eligieras) */
+    
+    /* REFUERZO POR SI ACASO */
+    position: relative;
+    z-index: 1;
 }
 
 .caja-destacada {
@@ -253,20 +295,81 @@ main {
     margin-top: 15px;
 }
 
-/* 4. Pie de Página */
+/* =========================================
+   4. PIE DE PÁGINA (Footer Cristal Completo)
+   ========================================= */
 footer { 
-    background: #5f401ee5; 
-    color: white; 
-    text-align: center; 
-    padding: 1.5rem; 
+    /* EFECTO CRISTAL IDÉNTICO AL HEADER */
+    background: rgba(163, 163, 163, 0.55); 
+    backdrop-filter: blur(20px) grayscale(1) brightness(1.3); 
+    -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
+    
+    /* Borde solo por arriba (opcional, ayuda a definir el final del contenido) */
+    border-top: 1px solid rgb(0, 0, 0); 
+    
+    /* El cuarto valor ahora es 0 para que mida exactamente de lado a lado */
+    box-shadow: 0 -10px 25px 0 rgba(0, 0, 0, 0.15); 
+    
+    /* Ancho completo y sin redondeos */
+    width: 100%;
+    margin: 0; /* Quitamos los márgenes laterales */
+    border-radius: 0; /* Bordes rectos */
+    
+    padding: 2rem; 
+    
+    /* Empuja el footer siempre hacia abajo del todo */
     margin-top: auto; 
+    color: #333; 
+    
+    /* Importante para que el padding no desborde el ancho de la página */
+    box-sizing: border-box; 
 
-    box-shadow: 0 -10px 30px -10px rgba(0, 0, 0, 0.4);
+    /* Estas dos líneas obligan al footer (y a su sombra) a ponerse por encima del resto de la página */
+    position: relative;
+    z-index: 10;
+}
+/* Estructura de columnas */
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que colapsen en móvil */
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea separadora suave */
+    padding-bottom: 20px;
 }
 
-footer a { 
-    color: #101010; 
-    text-decoration: none; 
+.footer-seccion {
+    flex: 1;
+    min-width: 200px; /* Evita que las columnas se aplasten demasiado */
+}
+
+.footer-seccion h3 {
+    margin-top: 0;
+    color: rgb(21, 66, 31); /* El mismo verde oscuro que usas en el hover del menú */
+    font-size: 1.2rem;
+}
+
+.footer-seccion p, 
+.footer-seccion a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Efecto al pasar el ratón por los enlaces del footer */
+.footer-seccion a:hover {
+    color: rgb(21, 66, 31);
+    font-weight: bold;
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #444;
 }
 /* Estilos para el logo de la cabecera */
 .zona-logo {
@@ -312,4 +415,69 @@ footer a {
     /* Le ponemos una sombra oscura al texto para que se lea perfecto aunque la foto sea clara */
     text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8); 
     padding: 20px;
+}
+
+/* =========================================
+   ZONA DE USUARIO (Botones Login/Registro/Perfil)
+   ========================================= */
+.zona-usuario {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Separación entre los botones */
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 2px solid rgba(0, 0, 0, 0.1); /* Línea vertical divisoria */
+}
+
+/* Evitamos la línea de subrayado verde animada en estos botones */
+.zona-usuario a::after {
+    display: none !important;
+}
+
+/* Botón Iniciar Sesión (Principal) */
+nav a.btn-login {
+    background: #4A7C59; /* Verde elegante */
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-left: 0;
+    box-shadow: 0 4px 10px rgba(74, 124, 89, 0.3);
+}
+nav a.btn-login:hover {
+    background: #386044; 
+}
+
+/* Botón Registrarse (Fondo negro, letras blancas) */
+nav a.btn-registro {
+    background: #1a1a1a; /* Negro elegante (casi puro) */
+    color: white !important; /* Letras blancas */
+    
+    /* Igualamos el padding al de Iniciar Sesión porque le quitamos el borde */
+    padding: 8px 18px; 
+    border: none; /* Adiós al borde verde */
+    
+    border-radius: 20px;
+    margin-left: 0;
+    font-weight: bold;
+    /* Le ponemos una sombrita oscura para que encaje con el estilo 3D */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+}
+
+/* Efecto al pasar el ratón por encima del botón negro */
+nav a.btn-registro:hover {
+    background: #333333; /* Se pone un poco gris oscuro para que notes que lo estás tocando */
+}
+
+/* Botón Mi Perfil (Píldora cristal) */
+nav a.btn-perfil {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1a1a1a !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    margin-left: 0;
+    font-weight: bold;
+}
+nav a.btn-perfil:hover {
+    background: rgba(255, 255, 255, 0.9);
 }
