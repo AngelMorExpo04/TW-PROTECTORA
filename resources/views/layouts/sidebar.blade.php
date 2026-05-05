@@ -1,0 +1,52 @@
+<!-- MENÚ LATERAL -->
+<aside id="menuLateral">
+    <!-- Botón de la huella que sobresale -->
+    <button id="btnHuella" class="btn-huella" title="Abrir/Cerrar menú"><img src="{{ asset('img/huella.png') }}" alt="Abrir menú" style="width: 25px; height: auto;"></button>
+    
+    <div class="contenido-aside">
+        @guest
+            <!-- Si no ha iniciado sesión -->
+            <h3 style="margin-top: 0;">Tu Dashboard</h3>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.5; margin-bottom: 0;">
+                Inicia sesión para darle <b>Star</b> a tus repositorios de animales favoritos y hacer seguimiento de tus <b>Pull Requests</b> (adopciones).
+            </p>
+        @endguest
+
+        @auth
+            <!-- Opciones exclusivas para Usuario Normal -->
+            @if(Auth::user()->tipo_usuario === 'normal')
+                <h3 style="margin-top: 0;">Tus Repositorios</h3>
+                <ul>
+                    <li><a href="/mis-favoritos">⭐ Repositorios Starred</a></li>
+                    <li><a href="/mis-solicitudes">🔄 Mis Pull Requests (Trámites)</a></li>
+                    <li><a href="/perfil">⚙️ Settings</a></li>
+                </ul>
+            @endif
+
+            <!-- Opciones exclusivas de Voluntarios/Administradores -->
+            @if(Auth::user()->tipo_usuario === 'voluntario' || Auth::user()->tipo_usuario === 'admin')
+                <h3 style="color: #b30000; margin-top: 0;">Organización (Admin)</h3>
+                <ul>
+                    <li><a href="/animales/gestion" class="enlace-admin">➕ Nuevo Repo (Alta Animal)</a></li>
+                    <li><a href="/panel-salud" class="enlace-admin">🐛 Issues Sanitarios (Salud)</a></li>
+                    <li><a href="/solicitudes-pendientes" class="enlace-admin">📬 Merge Requests (Adopciones)</a></li>
+                </ul>
+            @endif
+        @endauth
+    </div>
+</aside>
+
+<!-- SCRIPT PARA EL MENÚ LATERAL -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuLateral = document.getElementById('menuLateral');
+        const btnHuella = document.getElementById('btnHuella');
+
+        if (btnHuella && menuLateral && !btnHuella.dataset.hasListener) {
+            btnHuella.addEventListener('click', function() {
+                menuLateral.classList.toggle('desplegado');
+            });
+            btnHuella.dataset.hasListener = "true";
+        }
+    });
+</script>

@@ -19,33 +19,18 @@
     </div>
     <div class="contenedor-principal">
         
-        <!-- MENÚ LATERAL -->
-        <aside>
-            <h3>Filtros y Ayuda</h3>
-            <ul>
-                <li><a href="/catalogo?tipo=perros">🐶 Ver Perros</a></li>
-                <li><a href="/catalogo?tipo=gatos">🐱 Ver Gatos</a></li>
-                <li><a href="/contacto">📞 Sobre nosotros</a></li>
-                
-                @auth
-                    @if(Auth::user()->tipo_usuario === 'voluntario' || Auth::user()->tipo_usuario === 'admin')
-                        <li><hr></li>
-                        <li><a href="/panel-voluntariado" class="enlace-admin">⚙️ Gestión (Voluntario)</a></li>
-                    @endif
-                @endauth
-            </ul>
-        </aside>
+        @include('layouts.sidebar')
 
         <!-- ZONA CENTRAL -->
         <main>
-            <h2>Bienvenido a nuestra Protectora</h2>
-            <p>Nuestra misión principal es fomentar la adopción responsable y llevar un control sanitario de los animales rescatados.</p>
+            <h2>Bienvenido a GuauHub</h2>
+            <p>Donde el mundo construye software... digo, ¡donde los animales rescatan a sus humanos! Únete a la mayor comunidad de código abierto de adopción responsable.</p>
             
             <div class="caja-destacada">
-                <h3>¡Encuentra a tu nuevo mejor amigo!</h3>
-                <p>Aquí el Estudiante 1 pondrá un pequeño resumen o fotos destacadas de los animales disponibles.</p>
+                <h3>¡Haz Fork de tu nuevo mejor amigo!</h3>
+                <p>Aquí el Estudiante 1 listará los repositorios (animales) más destacados que buscan un merge definitivo en una familia.</p>
                 <a href="/catalogo" class="btn-principal">
-                    Ir al Catálogo de Adopción 👉
+                    Explorar repositorios públicos 👉
                 </a>
             </div>
         </main>
@@ -55,5 +40,6 @@
     <!-- INCLUIMOS EL PIE DE PÁGINA -->
     @include('layouts.footer')
 
+    <!-- El script del menú lateral ya está incluido dentro de layouts.sidebar -->
 </body>
 </html>
