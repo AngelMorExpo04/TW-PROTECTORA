@@ -22,7 +22,7 @@
         @include('layouts.sidebar')
 
         <!-- ZONA CENTRAL -->
-        <main>
+        <main class="inicio-container">
             <h2>Bienvenido a GuauHub</h2>
             <p>Donde el mundo construye software... digo, ¡donde los animales rescatan a sus humanos! Únete a la mayor comunidad de código abierto de adopción responsable.</p>
             

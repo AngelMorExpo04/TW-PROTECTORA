@@ -1,7 +1,10 @@
+<!-- CHECKBOX OCULTO PARA EL MENÚ LATERAL -->
+<input type="checkbox" id="toggle-sidebar" class="css-toggle" style="display:none;">
+
 <!-- MENÚ LATERAL -->
 <aside id="menuLateral">
     <!-- Botón de la huella que sobresale -->
-    <button id="btnHuella" class="btn-huella" title="Abrir/Cerrar menú"><img src="{{ asset('img/huella.png') }}" alt="Abrir menú" style="width: 25px; height: auto;"></button>
+    <label for="toggle-sidebar" id="btnHuella" class="btn-huella" title="Abrir/Cerrar menú"><img src="{{ asset('img/huella.png') }}" alt="Abrir menú" style="width: 25px; height: auto; cursor:pointer;"></label>
     
     <div class="contenido-aside">
         @guest
@@ -35,18 +38,3 @@
         @endauth
     </div>
 </aside>
-
-<!-- SCRIPT PARA EL MENÚ LATERAL -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuLateral = document.getElementById('menuLateral');
-        const btnHuella = document.getElementById('btnHuella');
-
-        if (btnHuella && menuLateral && !btnHuella.dataset.hasListener) {
-            btnHuella.addEventListener('click', function() {
-                menuLateral.classList.toggle('desplegado');
-            });
-            btnHuella.dataset.hasListener = "true";
-        }
-    });
-</script>

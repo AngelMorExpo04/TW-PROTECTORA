@@ -9,6 +9,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /* Fondo de imagen de patas, fija y cubriendo toda la pantalla */
+    background-image: url('/img/foto_patas.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
     /* EL SEGURO CONTRA LÍNEAS BLANCAS LATERALES */
     overflow-x: hidden;
@@ -33,7 +39,7 @@ body {
 /* 1. Menú Superior (FIJO y ANTI-VERDE) */
 header {
     /* ... mantén tus colores de fondo, blur y grayscale que pusimos antes ... */
-    background: rgba(255, 255, 255, 0.267);
+    background: rgba(255, 255, 255, 0.486);
     backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
     -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
 
@@ -47,7 +53,8 @@ header {
 
     /* Mantén el resto de tus estilos */
     border: 1px solid rgb(255, 255, 255);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+    /* Sombra más fuerte y visible sobre blanco */
     border-radius: 20px;
     margin: 15px;
     padding: 1rem 2rem;
@@ -136,7 +143,6 @@ nav a.btn-perfil {
    ========================================= */
 
 /* Botón de las 3 líneas (oculto en ordenador) */
-/* Botón de las 3 líneas (oculto en ordenador) */
 .btn-menu {
     display: none;
     /* Se mantiene oculto en ordenador */
@@ -194,7 +200,7 @@ nav a.btn-perfil {
         right: 0;
         width: 220px;
 
-        background: rgba(255, 255, 255, 0.721);
+        background: rgba(255, 255, 255, 0.877);
         backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
         -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
 
@@ -216,8 +222,9 @@ nav a.btn-perfil {
         box-sizing: border-box;
     }
 
-    header nav.activo {
-        clip-path: inset(0 -20px -20px -20px); /* Márgenes negativos para que no corte la sombra */
+    #toggle-menu:checked~nav {
+        clip-path: inset(0 -20px -20px -20px);
+        /* Márgenes negativos para que no corte la sombra */
     }
 
     /* 1. ENLACES PRINCIPALES (Inicio, Soporte...) ALINEADOS A LA IZQUIERDA */
@@ -313,6 +320,17 @@ aside {
     display: none;
 }
 
+/* Dashboard (aside) con bordes redondeados, sombra y margen derecho solo en pantalla grande */
+@media (min-width: 990px) {
+    aside {
+        border-radius: 0 12px 12px 0;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        margin-right: 20px;
+        /* Separación entre el dashboard y el contenido central */
+    }
+}
+
 /* --- MÓVILES Y TABLETS (Menos de 990px) --- */
 @media (max-width: 990px) {
 
@@ -335,8 +353,8 @@ aside {
         margin-left: -250px;
     }
 
-    /* Al pinchar, vuelve a su sitio */
-    aside.desplegado {
+    /* Al pinchar el checkbox, vuelve a su sitio */
+    #toggle-sidebar:checked~aside {
         margin-left: 0;
     }
 
@@ -357,7 +375,8 @@ aside {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más fuerte y pronunciada */
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
+        /* Sombra más fuerte y pronunciada */
         transition: background 0.3s;
         z-index: 501;
     }
@@ -398,8 +417,8 @@ aside a.enlace-admin {
 main {
     flex: 1;
     padding: 2rem;
-    background: #FDFBF7;
-    /* (O el color que eligieras) */
+    background: transparent;
+    /* Dejamos que el fondo gris del body se vea */
 
     /* REFUERZO POR SI ACASO */
     position: relative;
@@ -407,7 +426,7 @@ main {
 }
 
 .caja-destacada {
-    border: 2px dashed #4CAF50;
+    border: 2px dashed #4A7C59;
     padding: 30px;
     text-align: center;
     margin-top: 40px;
@@ -415,7 +434,7 @@ main {
 }
 
 .btn-principal {
-    background: #4CAF50;
+    background: #4A7C59;
     color: white;
     padding: 15px 25px;
     text-decoration: none;
@@ -589,22 +608,24 @@ footer {
 }
 
 /* Botón Iniciar Sesión (Principal) */
-.zona-usuario a.btn-login {
+.zona-usuario .btn-login {
     background: #4A7C59;
     /* Verde elegante */
     color: white !important;
     padding: 8px 18px;
     border-radius: 20px;
     margin-left: 0;
+    font-weight: bold;
     box-shadow: 0 4px 10px rgba(74, 124, 89, 0.3);
+    text-decoration: none;
 }
 
-.zona-usuario a.btn-login:hover {
+.zona-usuario .btn-login:hover {
     background: #386044;
 }
 
 /* Botón Registrarse (Fondo negro, letras blancas) */
-.zona-usuario a.btn-registro {
+.zona-usuario .btn-registro {
     background: #1a1a1a;
     /* Negro elegante (casi puro) */
     color: white !important;
@@ -668,7 +689,18 @@ footer {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.modal-overlay.activo {
+/* Área invisible para cerrar el modal al hacer clic fuera */
+.modal-bg-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+#toggle-login:checked~#modalLogin,
+#toggle-registro:checked~#modalRegistro {
     opacity: 1;
     visibility: visible;
 }
@@ -693,7 +725,8 @@ footer {
     -webkit-backdrop-filter: blur(15px);
 }
 
-.modal-overlay.activo .modal-content {
+#toggle-login:checked~#modalLogin .modal-content,
+#toggle-registro:checked~#modalRegistro .modal-content {
     transform: translateY(0);
 }
 
@@ -751,7 +784,8 @@ footer {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.form-group input, .form-group select {
+.form-group input,
+.form-group select {
     padding: 10px 12px;
     border-radius: 8px;
     border: none;
@@ -762,7 +796,8 @@ footer {
     transition: box-shadow 0.3s;
 }
 
-.form-group input:focus, .form-group select:focus {
+.form-group input:focus,
+.form-group select:focus {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
@@ -797,4 +832,586 @@ footer {
 
 .btn-submit-registro:hover {
     background: #386044;
+}
+
+/* =========================================
+   CONTENEDORES GENERALES (Efecto Tarjeta)
+   ========================================= */
+.catalogo-container,
+.repo-container,
+.contacto-container,
+.pr-container,
+.inicio-container {
+    /* Ocupa todo el espacio disponible con un margen a los lados */
+    margin: 30px 20px;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* En pantalla grande: alinear arriba con el dashboard */
+@media (min-width: 990px) {
+
+    .catalogo-container,
+    .repo-container,
+    .contacto-container,
+    .pr-container,
+    .inicio-container {
+        margin-top: 0;
+        padding-top: 10px;
+        /* Menos hueco arriba para que el texto suba */
+    }
+}
+
+/* En móvil: sin márgenes laterales, ocupa todo el ancho */
+@media (max-width: 990px) {
+
+    .catalogo-container,
+    .repo-container,
+    .contacto-container,
+    .pr-container,
+    .inicio-container {
+        margin: 20px 0 0 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 25px 20px 25px 75px;
+        /* espacio izquierdo para la pestaña de la huella */
+    }
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.repo-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+}
+
+.repo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.repo-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
+
+.readme-box {
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    /* más redondeado para suavizar el corte inferior */
+    overflow: hidden;
+}
+
+/* Color de fondo del README según si es perro o gato */
+/* ← Mismo color que las tarjetas del catálogo */
+.readme-box-perro {
+    background: #faf0cc9d;
+}
+
+.readme-box-gato {
+    background: #f0d8ffa1;
+}
+
+.readme-header {
+    background: #f6f8fa;
+    border-bottom: 1px solid #d0d7de;
+    padding: 10px 15px;
+    font-family: monospace;
+    color: #57606a;
+}
+
+.readme-content {
+    padding: 30px 30px 50px 30px;
+    /* más padding abajo para suavizar el cierre */
+}
+
+.repo-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.repo-sidebar .sidebar-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.repo-sidebar h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.no-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.no-bullets li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   FORMULARIO ADOPCIÓN (PULL REQUEST)
+   ========================================= */
+.pr-header {
+    margin-bottom: 30px;
+}
+
+.pr-header h2 {
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.pr-compare {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: monospace;
+}
+
+.branch-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #eaf5ff;
+    color: #0969da;
+    border: 1px solid #b6e3ff;
+}
+
+.compare-branch {
+    background: #ddf4ff;
+}
+
+.compare-arrow {
+    color: #57606a;
+    font-size: 1.2rem;
+}
+
+.pr-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
+
+.pr-form-box {
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 30px;
+}
+
+.form-check-group {
+    margin: 20px 0;
+}
+
+.checkbox-container {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+}
+
+.pr-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+/* Responsive para grid layouts */
+@media (max-width: 800px) {
+
+    .repo-layout,
+    .pr-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* El sidebar en móviles pasa a tener 2 columnas y estilo caja para compactarlo */
+    .repo-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid #d0d7de;
+    }
+
+    .repo-sidebar .sidebar-section {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    /* Las columnas de texto del README vuelven a 1 sola en móviles para no desbordar */
+    .text-columns {
+        column-count: 1 !important;
+    }
+}
+
+/* Espacio extra en móviles para que la pestaña de la huella no tape el texto en las páginas interiores */
+@media (max-width: 990px) {
+
+    .catalogo-container,
+    .contacto-container,
+    .repo-container,
+    .pr-container {
+        padding-left: 65px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    }
+}
+
+
+/* =========================================================
+   PÁGINA: EXPLORAR REPOSITORIOS (catalogo.blade.php)
+   ========================================================= */
+
+/* Barra de filtros rápidos */
+.filtros-catalogo {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botones de filtro (Perros / Gatos / Todos) */
+.btn-filtro {
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    transition: opacity 0.2s;
+}
+
+.btn-filtro:hover {
+    opacity: 0.85;
+}
+
+.btn-filtro-perros {
+    background: #faf0ccfd;
+}
+
+.btn-filtro-gatos {
+    background: #f0d8ff;
+}
+
+.btn-filtro-todos {
+    background: #888;
+}
+
+/* Grid de tarjetas de animales */
+.grid-animales {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 35px;
+    padding: 10px 5px;
+}
+
+/* --- Tarjeta de animal (base) --- */
+/* overflow: visible para que la sombra y rotación no se recorten */
+.card-animal {
+    border-radius: 14px;
+    overflow: visible;
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Interior con overflow: hidden para que la foto respete el border-radius */
+.card-animal-inner {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Perros: inclinadas a la derecha + fondo crema cálido */
+.card-perro {
+    transform: rotate(1.5deg);
+    background: #faf0cc9d;
+    /* ← CAMBIA AQUÍ el color del fondo de los PERROS */
+}
+
+/* Gatos: inclinadas a la izquierda + fondo lavanda suave */
+.card-gato {
+    transform: rotate(-1.5deg);
+    background: #f0d8ffa1;
+    /* ← CAMBIA AQUÍ el color del fondo de los GATOS */
+}
+
+/* Al hacer hover: se endereza, sube y escala ligeramente */
+.card-animal:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.02);
+    box-shadow: 10px 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen de la tarjeta */
+.card-animal img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Zona de texto dentro de la tarjeta */
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    margin-top: 0;
+    color: #1a1a1a;
+}
+
+/* Etiquetas de especie/estado */
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.etiqueta {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Etiquetas verdes para perros */
+.card-perro .etiqueta {
+    background: #d4edda;
+    color: #3a6b45;
+}
+
+/* Etiquetas azules para gatos */
+.card-gato .etiqueta {
+    background: #d4edda;
+    color: #3a6b45;
+}
+
+/* Etiquetas neutras (sidebar del animal, sin color de especie) */
+.etiquetas-sidebar .etiqueta {
+    background: #e9ecef;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Botón "Ver detalles de la rama" (verde igual que Iniciar Sesión) */
+.btn-catalogo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background: #4A7C59;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-catalogo:hover {
+    background: #386044;
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   PÁGINA: FICHA DEL ANIMAL (animal.blade.php)
+   ========================================================= */
+
+/* Texto gris del breadcrumb "GuauHub / Explorar Repositorios /" */
+.texto-gris {
+    color: #666;
+}
+
+/* Imagen del animal dentro del README, con margen superior */
+.repo-image-top {
+    margin-top: 30px;
+}
+
+/* Barra verde (README.md + Stars) debajo de la foto */
+.readme-banner {
+    background: #4A7C59;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.readme-stars {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Sección de 2 columnas de texto (Skills + Dependencias) */
+.text-columns {
+    column-count: 2;
+    column-gap: 40px;
+    margin-top: 20px;
+}
+
+/* Evita que el contenido se corte entre columnas */
+.col-break {
+    break-inside: avoid;
+}
+
+/* Títulos sin margen superior dentro de las columnas */
+.mt-0 {
+    margin-top: 0;
+}
+
+/* Lista de habilidades */
+.lista-skills {
+    padding-left: 20px;
+}
+
+/* Bloque final con el botón de adoptar */
+.adoptar-cta {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Botón principal de adopción */
+.btn-adoptar-repo {
+    background: #4A7C59;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(74, 124, 89, 0.4);
+    transition: background 0.3s;
+}
+
+.btn-adoptar-repo:hover {
+    background: #386044;
+}
+
+/* Separador horizontal dentro del README */
+.readme-hr {
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    margin: 35px 0 30px 0;
+}
+
+/* Grid de metadatos (About, Issues, Releases, Contributors) en 2 columnas */
+.repo-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+/* Cada bloque de metadato */
+.meta-section {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+
+.meta-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+/* Iconos de estado de salud */
+.check-ok {
+    color: #2ea043;
+}
+
+.check-warn {
+    color: #d29922;
+}
+
+/* En móvil: el grid de metadatos pasa a 1 columna */
+@media (max-width: 600px) {
+    .repo-meta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   PÁGINA: SOPORTE / CONTACTO (contacto.blade.php)
+   ========================================================= */
+
+/* Caja del formulario de contacto */
+.form-contacto {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-contacto .form-group {
+    margin-bottom: 20px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+    min-height: 150px;
 }

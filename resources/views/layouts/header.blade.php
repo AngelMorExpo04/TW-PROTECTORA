@@ -5,8 +5,9 @@
         <h1>GuauHub</h1>
     </div>
 
-    <!-- 2. BOTÓN HAMBURGUESA -->
-    <button class="btn-menu" id="btnMenu">☰</button>
+    <!-- 2. BOTÓN HAMBURGUESA Y CHECKBOX -->
+    <input type="checkbox" id="toggle-menu" class="css-toggle" style="display:none;">
+    <label for="toggle-menu" class="btn-menu" id="btnMenu">☰</label>
 
     <!-- 3. MENÚ DE NAVEGACIÓN DESPLEGABLE -->
     <nav id="menuNavegacion">
@@ -16,16 +17,18 @@
         
         <!-- ZONA DE USUARIO (Ahora está DENTRO del menú) -->
         <div class="zona-usuario">
-            <a href="#" class="btn-login">Iniciar Sesión</a>
-            <a href="#" class="btn-registro">Registrarse</a>
+            <label for="toggle-login" class="btn-login" style="cursor:pointer;">Iniciar Sesión</label>
+            <label for="toggle-registro" class="btn-registro" style="cursor:pointer;">Registrarse</label>
         </div>
     </nav>
 </header>
 
-<!-- MODALES DE SESIÓN Y REGISTRO -->
+<!-- MODALES DE SESIÓN Y REGISTRO (SIN JAVASCRIPT) -->
+<input type="checkbox" id="toggle-login" class="css-toggle" style="display:none;">
 <div id="modalLogin" class="modal-overlay">
+    <label for="toggle-login" class="modal-bg-close"></label>
     <div class="modal-content modal-verde">
-        <button class="btn-cerrar-modal" id="cerrarLogin">&times;</button>
+        <label for="toggle-login" class="btn-cerrar-modal" id="cerrarLogin">&times;</label>
         <h2>Iniciar Sesión</h2>
         <form action="#" method="POST">
             <div class="form-group">
@@ -41,9 +44,11 @@
     </div>
 </div>
 
+<input type="checkbox" id="toggle-registro" class="css-toggle" style="display:none;">
 <div id="modalRegistro" class="modal-overlay">
+    <label for="toggle-registro" class="modal-bg-close"></label>
     <div class="modal-content modal-negro">
-        <button class="btn-cerrar-modal" id="cerrarRegistro">&times;</button>
+        <label for="toggle-registro" class="btn-cerrar-modal" id="cerrarRegistro">&times;</label>
         <h2>Registrarse</h2>
         <form action="#" method="POST">
             <div class="form-group">
@@ -77,59 +82,3 @@
         </form>
     </div>
 </div>
-
-<!-- SCRIPT para abrir/cerrar el menú en móvil y modales -->
-<script>
-    // Cuando el documento esté listo, le damos la orden al botón
-    document.addEventListener('DOMContentLoaded', function() {
-        // --- Menú Móvil ---
-        const boton = document.getElementById('btnMenu');
-        const menu = document.getElementById('menuNavegacion');
-
-        boton.addEventListener('click', function() {
-            // Activa o desactiva la clase "activo" (que en CSS lo hace visible)
-            menu.classList.toggle('activo');
-        });
-
-        // --- Modales ---
-        const modalLogin = document.getElementById('modalLogin');
-        const modalRegistro = document.getElementById('modalRegistro');
-        
-        // Seleccionamos todos los botones por si hay varios (ej. móvil vs desktop)
-        const btnLoginElements = document.querySelectorAll('.btn-login');
-        const btnRegistroElements = document.querySelectorAll('.btn-registro');
-        
-        const cerrarLogin = document.getElementById('cerrarLogin');
-        const cerrarRegistro = document.getElementById('cerrarRegistro');
-
-        // Abrir Iniciar Sesión
-        btnLoginElements.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                modalLogin.classList.add('activo');
-            });
-        });
-
-        // Abrir Registro
-        btnRegistroElements.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                modalRegistro.classList.add('activo');
-            });
-        });
-
-        // Cerrar modales con la X
-        cerrarLogin.addEventListener('click', () => modalLogin.classList.remove('activo'));
-        cerrarRegistro.addEventListener('click', () => modalRegistro.classList.remove('activo'));
-
-        // Cerrar al hacer clic en el fondo gris por fuera
-        window.addEventListener('click', function(e) {
-            if (e.target === modalLogin) {
-                modalLogin.classList.remove('activo');
-            }
-            if (e.target === modalRegistro) {
-                modalRegistro.classList.remove('activo');
-            }
-        });
-    });
-</script>

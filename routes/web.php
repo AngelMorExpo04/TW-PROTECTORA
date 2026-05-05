@@ -13,3 +13,11 @@ Route::get('/catalogo', function () {
 Route::get('/contacto', function () {
     return view('contacto');
 });
+
+Route::get('/animal', function () {
+    return view('animal');
+});
+
+Route::get('/adopcion', function () {
+    return view('adopcion');
+});
