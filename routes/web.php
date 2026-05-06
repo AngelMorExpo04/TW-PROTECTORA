@@ -1,23 +1,34 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\AdoptionRequestController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/catalogo', function () {
-    return view('catalogo');
 });
 
 Route::get('/contacto', function () {
     return view('contacto');
 });
 
-Route::get('/animal', function () {
-    return view('animal');
-});
+// Rutas de Autenticación
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::get('/adopcion', function () {
-    return view('adopcion');
+// Ruta de login ficticia para que el middleware 'auth' sepa a dónde redirigir en caso de error
+Route::get('/login', function () {
+    return redirect('/')->withErrors(['login' => 'Debes iniciar sesión para acceder a esta página.']);
+})->name('login');
+
+// Rutas públicas de animales
+Route::get('/catalogo', [AnimalController::class, 'index']);
+Route::get('/animal/{id}', [AnimalController::class, 'show']);
+
+// Rutas protegidas (Requieren inicio de sesión)
+Route::middleware('auth')->group(function () {
+    Route::get('/adopcion/{animal_id}', [AdoptionRequestController::class, 'create']);
+    Route::post('/adopcion', [AdoptionRequestController::class, 'store']);
 });

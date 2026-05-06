@@ -25,56 +25,31 @@
             </div>
 
             <div class="grid-animales">
-                <!-- Ejemplo de Animal 1 - PERRO -->
-                <div class="card-animal card-perro">
+                @foreach($animales as $animal)
+                <div class="card-animal card-{{ strtolower($animal->species) }}">
                     <div class="card-animal-inner">
-                        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop" alt="Perro Beagle">
+                        <img src="{{ $animal->image_path }}" alt="{{ $animal->name }}">
                         <div class="card-info">
-                            <h3>Max (v2.0)</h3>
+                            <h3>{{ $animal->name }}</h3>
                             <div class="etiquetas">
-                                <span class="etiqueta">🐶 Perro</span>
-                                <span class="etiqueta">🟢 Activo</span>
-                                <span class="etiqueta">🎂 2 años</span>
+                                <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
+                                <span class="etiqueta">
+                                    @if($animal->status == 'available')
+                                        🟢 Disponible
+                                    @elseif($animal->status == 'in_process')
+                                        🟡 En proceso
+                                    @else
+                                        🔴 Adoptado
+                                    @endif
+                                </span>
+                                <span class="etiqueta">🎂 {{ \Carbon\Carbon::parse($animal->birth_date)->age }} años</span>
                             </div>
-                            <p>Beagle muy enérgico. Ideal para desarrolladores que necesiten salir a correr después de programar.</p>
-                            <a href="/animal" class="btn-catalogo">Ver detalles de la rama</a>
+                            <p>{{ Str::limit($animal->description, 100) }}</p>
+                            <a href="/animal/{{ $animal->id }}" class="btn-catalogo">Ver detalles de la rama</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Ejemplo de Animal 2 - GATO -->
-                <div class="card-animal card-gato">
-                    <div class="card-animal-inner">
-                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop" alt="Gato Naranja">
-                        <div class="card-info">
-                            <h3>Garfield_Dev</h3>
-                            <div class="etiquetas">
-                                <span class="etiqueta">🐱 Gato</span>
-                                <span class="etiqueta">💤 Dormilón</span>
-                                <span class="etiqueta">🎂 4 años</span>
-                            </div>
-                            <p>Gato tranquilo, experto en dormir sobre el teclado mientras intentas hacer push a producción.</p>
-                            <a href="/animal" class="btn-catalogo">Ver detalles de la rama</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ejemplo de Animal 3 - PERRO -->
-                <div class="card-animal card-perro">
-                    <div class="card-animal-inner">
-                        <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?q=80&w=600&auto=format&fit=crop" alt="Husky">
-                        <div class="card-info">
-                            <h3>Snow_Master</h3>
-                            <div class="etiquetas">
-                                <span class="etiqueta">🐶 Perro</span>
-                                <span class="etiqueta">❄️ Frío</span>
-                                <span class="etiqueta">🎂 1 año</span>
-                            </div>
-                            <p>Husky siberiano. Requiere sistemas de refrigeración avanzados y paseos largos.</p>
-                            <a href="/animal" class="btn-catalogo">Ver detalles de la rama</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </main>
     </div>

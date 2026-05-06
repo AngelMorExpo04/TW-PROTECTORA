@@ -25,31 +25,18 @@
 
             <div class="pr-layout">
                 <div class="pr-form-box">
-                    <form action="#" method="POST">
+                    <form action="/adopcion" method="POST">
+                        @csrf
+                        <input type="hidden" name="animal_id" value="{{ $animal->id ?? '' }}">
                         <div class="form-group">
                             <label for="titulo">Título de la Pull Request</label>
-                            <input type="text" id="titulo" name="titulo" value="Solicitud de adopción para Max" readonly style="background: #f0f0f0; color: #555;">
+                            <input type="text" id="titulo" name="titulo" value="Solicitud de adopción para {{ $animal->name ?? 'Max' }}" readonly style="background: #f0f0f0; color: #555;">
                         </div>
 
                         <div class="form-group">
-                            <label for="experiencia">¿Tienes experiencia previa (Seniority)?</label>
-                            <select id="experiencia" name="experiencia" required>
-                                <option value="">Selecciona tu nivel...</option>
-                                <option value="junior">Junior (Es mi primera mascota)</option>
-                                <option value="mid">Mid-Level (He tenido mascotas en el pasado)</option>
-                                <option value="senior">Senior (Tengo más mascotas actualmente)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="entorno">Describe el entorno de despliegue (Tu vivienda)</label>
-                            <input type="text" id="entorno" name="entorno" placeholder="Ej: Piso de 80m2 con balcón, casa con jardín..." required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="descripcion">Write (Justificación de la adopción)</label>
-                            <textarea id="descripcion" name="descripcion" placeholder="Explica por qué eres el candidato ideal para hacer merge de este repositorio en tu vida..." required></textarea>
-                            <small style="color: #666; display: block; margin-top: 5px;">Mínimo 50 caracteres recomendados. Soporta Markdown.</small>
+                            <label for="application_text">Write (Justificación de la adopción y contexto)</label>
+                            <textarea id="application_text" name="application_text" placeholder="Explica tu experiencia, entorno de despliegue (vivienda) y por qué eres el candidato ideal para hacer merge de este repositorio en tu vida..." required style="min-height: 150px;"></textarea>
+                            <small style="color: #666; display: block; margin-top: 5px;">Mínimo 50 caracteres recomendados. Detalla tu nivel de seniority y entorno. Soporta Markdown.</small>
                         </div>
 
                         <div class="form-check-group">
@@ -65,7 +52,7 @@
                         
                         <div class="pr-actions">
                             <button type="submit" class="btn-principal" style="background: #2ea043; border-color: rgba(240, 246, 252, 0.1);">Create Pull Request</button>
-                            <a href="/animal" class="btn-secundario">Cancel</a>
+                            <a href="/animal/{{ $animal->id ?? '' }}" class="btn-secundario">Cancel</a>
                         </div>
                     </form>
                 </div>

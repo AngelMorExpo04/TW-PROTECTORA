@@ -17,7 +17,7 @@
 
         @auth
             <!-- Opciones exclusivas para Usuario Normal -->
-            @if(Auth::user()->tipo_usuario === 'normal')
+            @if(Auth::user()->role === 'user')
                 <h3 style="margin-top: 0;">Tus Repositorios</h3>
                 <ul>
                     <li><a href="/mis-favoritos">⭐ Repositorios Starred</a></li>
@@ -27,7 +27,7 @@
             @endif
 
             <!-- Opciones exclusivas de Voluntarios/Administradores -->
-            @if(Auth::user()->tipo_usuario === 'voluntario' || Auth::user()->tipo_usuario === 'admin')
+            @if(Auth::user()->role === 'voluntario' || Auth::user()->role === 'admin')
                 <h3 style="color: #b30000; margin-top: 0;">Organización (Admin)</h3>
                 <ul>
                     <li><a href="/animales/gestion" class="enlace-admin">➕ Nuevo Repo (Alta Animal)</a></li>
