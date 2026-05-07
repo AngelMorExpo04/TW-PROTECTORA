@@ -6,7 +6,7 @@
     </div>
 
     <!-- 2. BOTÓN HAMBURGUESA Y CHECKBOX -->
-    <input type="checkbox" id="toggle-menu" class="css-toggle" style="display:none;">
+    <input type="checkbox" id="toggle-menu" class="css-toggle d-none">
     <label for="toggle-menu" class="btn-menu" id="btnMenu">☰</label>
 
     <!-- 3. MENÚ DE NAVEGACIÓN DESPLEGABLE -->
@@ -18,34 +18,34 @@
         <!-- ZONA DE USUARIO (Ahora está DENTRO del menú) -->
         <div class="zona-usuario">
             @auth
-                <span style="color: white; margin-right: 15px; font-weight: bold;">👋 {{ Auth::user()->username }}</span>
-                <form action="/logout" method="POST" style="display:inline;">
+                <span class="{{ (Auth::user()->role === 'voluntario' || Auth::user()->role === 'admin') ? 'username-admin' : 'username-header' }}">{{ Auth::user()->username }}</span>
+                <form action="/logout" method="POST" class="d-inline">
                     @csrf
-                    <button type="submit" class="btn-registro" style="cursor:pointer; border: none; background: #da3633;">Cerrar Sesión</button>
+                    <button type="submit" class="btn-logout-red">Cerrar Sesión</button>
                 </form>
             @else
-                <label for="toggle-login" class="btn-login" style="cursor:pointer;">Iniciar Sesión</label>
-                <label for="toggle-registro" class="btn-registro" style="cursor:pointer;">Registrarse</label>
+                <label for="toggle-login" class="btn-login cursor-pointer">Iniciar Sesión</label>
+                <label for="toggle-registro" class="btn-registro cursor-pointer">Registrarse</label>
             @endauth
         </div>
     </nav>
 </header>
 
 @if($errors->any())
-    <div style="background-color: rgba(218, 54, 51, 0.9); color: white; padding: 15px; text-align: center; position: fixed; top: 60px; width: 100%; z-index: 999; backdrop-filter: blur(5px);">
+    <div class="header-alert header-alert-error">
         @foreach($errors->all() as $error)
-            <p style="margin: 0; font-weight: bold;">{{ $error }}</p>
+            <p>{{ $error }}</p>
         @endforeach
     </div>
 @endif
 @if(session('success'))
-    <div style="background-color: rgba(46, 160, 67, 0.9); color: white; padding: 15px; text-align: center; position: fixed; top: 60px; width: 100%; z-index: 999; backdrop-filter: blur(5px);">
-        <p style="margin: 0; font-weight: bold;">{{ session('success') }}</p>
+    <div class="header-alert header-alert-success">
+        <p>{{ session('success') }}</p>
     </div>
 @endif
 
 <!-- MODALES DE SESIÓN Y REGISTRO (SIN JAVASCRIPT) -->
-<input type="checkbox" id="toggle-login" class="css-toggle" style="display:none;">
+<input type="checkbox" id="toggle-login" class="css-toggle d-none">
 <div id="modalLogin" class="modal-overlay">
     <label for="toggle-login" class="modal-bg-close"></label>
     <div class="modal-content modal-verde">
@@ -66,7 +66,7 @@
     </div>
 </div>
 
-<input type="checkbox" id="toggle-registro" class="css-toggle" style="display:none;">
+<input type="checkbox" id="toggle-registro" class="css-toggle d-none">
 <div id="modalRegistro" class="modal-overlay">
     <label for="toggle-registro" class="modal-bg-close"></label>
     <div class="modal-content modal-negro">
@@ -90,7 +90,7 @@
                 <label for="reg-tipo">Tipo de cuenta (Para pruebas)</label>
                 <select id="reg-tipo" name="role" required>
                     <option value="user">Adoptante (Normal)</option>
-                    <option value="voluntario">Voluntario / Admin</option>
+                    <option value="admin">Voluntario / Admin</option>
                 </select>
             </div>
             <div class="form-group">

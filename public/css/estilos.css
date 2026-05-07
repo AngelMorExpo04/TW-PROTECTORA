@@ -399,18 +399,36 @@ aside a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    display: block;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background 0.3s;
+    display: inline-block;
+    /* Cambiado de block a inline-block para que la línea mida lo mismo que el texto */
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+    /* Necesario para la línea ::after */
 }
 
 aside a:hover {
-    background: #e0e0e0;
+    color: #1a4d2e;
+}
+
+/* Efecto de la línea debajo (igual que el header) */
+aside a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4A7C59;
+    transition: width 0.3s ease;
+}
+
+aside a:hover::after {
+    width: 100%;
 }
 
 aside a.enlace-admin {
-    color: red;
+    color: #333;
 }
 
 /* 3. Zona Central de Contenido */
@@ -884,6 +902,7 @@ footer {
         border-right: none;
         padding: 25px 20px 25px 75px;
         /* espacio izquierdo para la pestaña de la huella */
+
     }
 }
 
@@ -1249,6 +1268,28 @@ footer {
     transition: background 0.3s, transform 0.2s;
 }
 
+.username-header {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 3px 3px 4px rgba(74, 124, 89, 0.384);
+    margin-right: 15px;
+}
+
+.username-admin {
+    color: #4A7C59;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 3px 3px 4px rgba(74, 124, 89, 0.384);
+    margin-right: 15px;
+}
+
+.username-admin {
+    color: #4A7C59;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
 .btn-catalogo:hover {
     background: #386044;
     transform: scale(1.02);
@@ -1267,6 +1308,11 @@ footer {
 /* Imagen del animal dentro del README, con margen superior */
 .repo-image-top {
     margin-top: 30px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
 }
 
 /* Barra verde (README.md + Stars) debajo de la foto */
@@ -1415,3 +1461,215 @@ footer {
     resize: vertical;
     min-height: 150px;
 }
+
+/* =========================================
+   CLASES DE UTILIDAD PARA LIMPIEZA DE BLADE
+   ========================================= */
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.border-none {
+    border: none;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.header-alert {
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    position: fixed;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 300px;
+}
+
+.header-alert-error {
+    background-color: rgba(218, 54, 51, 0.95);
+}
+
+.header-alert-success {
+    background-color: rgba(74, 124, 89, 0.95);
+}
+
+.header-alert p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.btn-logout-red {
+    cursor: pointer;
+    border: none;
+    background: #da3633;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.input-readonly {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.textarea-readme {
+    min-height: 150px;
+}
+
+.text-muted-small {
+    color: #666;
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-github-green {
+    background: #2ea043;
+    border-color: rgba(240, 246, 252, 0.1);
+    color: white;
+}
+
+.etiqueta-blue {
+    background: #1f6feb;
+}
+
+.etiqueta-green {
+    background: #238636;
+}
+
+.text-white-bold {
+    color: white;
+    font-weight: bold;
+}
+
+.w-25-auto {
+    width: 25px;
+    height: auto;
+}
+
+.sidebar-p-small {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.text-github-red {
+    color: #333;
+}
+
+
+
+/* =========================================
+   SISTEMA DE ESTRELLAS (FAVORITOS)
+   ========================================= */
+
+.fav-star-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fav-star-container:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Botón que actúa como estrella con imágenes */
+.btn-star-fav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/star-white.png');
+    /* Blanca por defecto */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s ease, filter 0.3s ease;
+    padding: 0;
+}
+
+.btn-star-fav:hover {
+    transform: scale(1.2);
+}
+
+.btn-star-fav.is-favorite {
+    background-image: url('../img/star-yellow.png');
+    /* Amarilla si es favorito */
+}
+
+.repo-image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.fav-star-details {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.img-star-inline {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.img-sidebar-large {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.img-title-icon { width: 40px; height: 40px; vertical-align: middle; }

@@ -10,7 +10,7 @@
 
     @include('layouts.header')
 
-    <div class="contenedor-principal" style="padding-top: 100px;">
+    <div class="contenedor-principal pt-100">
         @include('layouts.sidebar')
 
         <main class="pr-container">
@@ -30,13 +30,13 @@
                         <input type="hidden" name="animal_id" value="{{ $animal->id ?? '' }}">
                         <div class="form-group">
                             <label for="titulo">Título de la Pull Request</label>
-                            <input type="text" id="titulo" name="titulo" value="Solicitud de adopción para {{ $animal->name ?? 'Max' }}" readonly style="background: #f0f0f0; color: #555;">
+                            <input type="text" id="titulo" name="titulo" value="Solicitud de adopción para {{ $animal->name ?? 'Max' }}" readonly class="input-readonly">
                         </div>
 
                         <div class="form-group">
                             <label for="application_text">Write (Justificación de la adopción y contexto)</label>
-                            <textarea id="application_text" name="application_text" placeholder="Explica tu experiencia, entorno de despliegue (vivienda) y por qué eres el candidato ideal para hacer merge de este repositorio en tu vida..." required style="min-height: 150px;"></textarea>
-                            <small style="color: #666; display: block; margin-top: 5px;">Mínimo 50 caracteres recomendados. Detalla tu nivel de seniority y entorno. Soporta Markdown.</small>
+                            <textarea id="application_text" name="application_text" placeholder="Explica tu experiencia, entorno de despliegue (vivienda) y por qué eres el candidato ideal para hacer merge de este repositorio en tu vida..." required class="textarea-readme"></textarea>
+                            <small class="text-muted-small">Mínimo 50 caracteres recomendados. Detalla tu nivel de seniority y entorno. Soporta Markdown.</small>
                         </div>
 
                         <div class="form-check-group">
@@ -51,7 +51,7 @@
                         </div>
                         
                         <div class="pr-actions">
-                            <button type="submit" class="btn-principal" style="background: #2ea043; border-color: rgba(240, 246, 252, 0.1);">Create Pull Request</button>
+                            <button type="submit" class="btn-principal btn-github-green">Create Pull Request</button>
                             <a href="/animal/{{ $animal->id ?? '' }}" class="btn-secundario">Cancel</a>
                         </div>
                     </form>
@@ -60,7 +60,7 @@
                 <div class="pr-sidebar">
                     <div class="sidebar-section">
                         <h3>Reviewers</h3>
-                        <p style="color: #666; font-size: 0.9rem;">El equipo de voluntarios de GuauHub revisará esta PR.</p>
+                        <p class="sidebar-p-small">El equipo de voluntarios de GuauHub revisará esta PR.</p>
                     </div>
                     <div class="sidebar-section">
                         <h3>Assignees</h3>
@@ -68,8 +68,8 @@
                     </div>
                     <div class="sidebar-section">
                         <h3>Labels</h3>
-                        <span class="etiqueta" style="background: #1f6feb;">Adopción</span>
-                        <span class="etiqueta" style="background: #238636;">Perro</span>
+                        <span class="etiqueta etiqueta-blue">Adopción</span>
+                        <span class="etiqueta etiqueta-green">Perro</span>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
 
     @include('layouts.header')
 
-    <div class="contenedor-principal" style="padding-top: 100px;">
+    <div class="contenedor-principal pt-100">
         @include('layouts.sidebar')
 
         <main class="repo-container">
@@ -24,7 +24,17 @@
                 <div class="readme-content">
 
                     <!-- Foto del animal -->
-                    <img src="{{ $animal->image_path }}" alt="{{ $animal->name }}" class="repo-image repo-image-top">
+                    <div class="repo-image-wrapper">
+                        <img src="{{ $animal->image_path }}" alt="{{ $animal->name }}" class="repo-image repo-image-top">
+                        @auth
+                            @if(Auth::user()->role === 'user')
+                            <form action="{{ route('favoritos.toggle', $animal->id) }}" method="POST" class="fav-star-container fav-star-details">
+                                @csrf
+                                <button type="submit" class="btn-star-fav {{ Auth::user()->favorites->contains($animal->id) ? 'is-favorite' : '' }}" title="Guardar en favoritos"></button>
+                            </form>
+                            @endif
+                        @endauth
+                    </div>
 
                     <!-- Barra verde con README y Stars -->
                     <div class="readme-banner">

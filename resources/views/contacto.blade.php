@@ -10,7 +10,7 @@
 
     @include('layouts.header')
 
-    <div class="contenedor-principal" style="padding-top: 100px;">
+    <div class="contenedor-principal pt-100">
         @include('layouts.sidebar')
 
         <main class="contacto-container">
@@ -36,7 +36,7 @@
                         <textarea id="mensaje" name="mensaje" required placeholder="Escribe aquí tu duda..."></textarea>
                     </div>
                     
-                    <button type="submit" class="btn-principal" style="width: 100%;">Enviar Ticket de Soporte</button>
+                    <button type="submit" class="btn-principal w-100">Enviar Ticket de Soporte</button>
                 </form>
             </div>
         </main>

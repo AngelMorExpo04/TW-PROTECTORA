@@ -12,7 +12,7 @@
     @include('layouts.header')
 
     <!-- La foto empezará desde arriba del todo -->
-    <div class="seccion-portada" style="padding-top: 100px;">
+    <div class="seccion-portada pt-100">
         <div class="contenido-portada">
             <h2>Dales una segunda oportunidad </h2>
         </div>

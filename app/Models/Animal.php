@@ -40,4 +40,9 @@ class Animal extends Model
     {
         return $this->hasMany(AdoptionRequest::class);
     }
+
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
+    }
 }

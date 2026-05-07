@@ -12,7 +12,10 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
-
+    public function favorites()
+    {
+        return $this->belongsToMany(Animal::class, 'favorites');
+    }
     /**
      * The attributes that are mass assignable.
      *

@@ -10,7 +10,7 @@
 
     @include('layouts.header')
 
-    <div class="contenedor-principal" style="padding-top: 100px;">
+    <div class="contenedor-principal pt-100">
         @include('layouts.sidebar')
 
         <main class="catalogo-container">
@@ -28,7 +28,17 @@
                 @foreach($animales as $animal)
                 <div class="card-animal card-{{ strtolower($animal->species) }}">
                     <div class="card-animal-inner">
-                        <img src="{{ $animal->image_path }}" alt="{{ $animal->name }}">
+                        <div class="repo-image-wrapper">
+                            <img src="{{ $animal->image_path }}" alt="{{ $animal->name }}">
+                            @auth
+                                @if(Auth::user()->role === 'user')
+                                <form action="{{ route('favoritos.toggle', $animal->id) }}" method="POST" class="fav-star-container">
+                                    @csrf
+                                    <button type="submit" class="btn-star-fav {{ Auth::user()->favorites->contains($animal->id) ? 'is-favorite' : '' }}" title="Guardar en favoritos"></button>
+                                </form>
+                                @endif
+                            @endauth
+                        </div>
                         <div class="card-info">
                             <h3>{{ $animal->name }}</h3>
                             <div class="etiquetas">
