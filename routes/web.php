@@ -36,3 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('/mis-favoritos', [App\Http\Controllers\FavoriteController::class, 'index'])->name('favoritos.index');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/perfil', function () {
+        return view('perfil');
+    });
+});

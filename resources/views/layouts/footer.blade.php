@@ -9,7 +9,6 @@
         <!-- Sección 2: Enlaces de la Práctica (OBLIGATORIOS) -->
         <div class="footer-seccion">
             <h3>Documentación</h3>
-            <a href="contacto.php">Contacto del Desarrollador</a>
             <a href="como_se_hizo.pdf" target="_blank">Informe: Cómo se hizo (PDF)</a>
         </div>
 

@@ -1,6 +1,6 @@
-/* ========================================================
+﻿/* ========================================================
    ESTILOS GENERALES DEL PROYECTO (Protectora)
-   Requisito: Separación entre HTML y estilos
+   Requisito: SeparaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n entre HTML y estilos
    ======================================================== */
 
 body {
@@ -16,12 +16,12 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
 
-    /* EL SEGURO CONTRA LÍNEAS BLANCAS LATERALES */
+    /* EL SEGURO CONTRA LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂNEAS BLANCAS LATERALES */
     overflow-x: hidden;
 }
 
 /* ========================================================
-   RESETEO UNIVERSAL (La solución a la línea blanca horizontal)
+   RESETEO UNIVERSAL (La soluciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n a la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea blanca horizontal)
    ======================================================== */
 *,
 *::before,
@@ -33,12 +33,12 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
-    /* Corta de raíz cualquier cosa que sobresalga */
+    /* Corta de raÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­z cualquier cosa que sobresalga */
 }
 
-/* 1. Menú Superior (FIJO y ANTI-VERDE) */
+/* 1. MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº Superior (FIJO y ANTI-VERDE) */
 header {
-    /* ... mantén tus colores de fondo, blur y grayscale que pusimos antes ... */
+    /* ... mantÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©n tus colores de fondo, blur y grayscale que pusimos antes ... */
     background: rgba(255, 255, 255, 0.486);
     backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
     -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
@@ -51,10 +51,10 @@ header {
     z-index: 1000;
     /* Asegura que pase por encima de todo el contenido */
 
-    /* Mantén el resto de tus estilos */
+    /* MantÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©n el resto de tus estilos */
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
-    /* Sombra más fuerte y visible sobre blanco */
+    /* Sombra mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s fuerte y visible sobre blanco */
     border-radius: 20px;
     margin: 15px;
     padding: 1rem 2rem;
@@ -62,17 +62,17 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    /* LA SOLUCIÓN AL DESBORDAMIENTO DEL HEADER */
+    /* LA SOLUCIÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“N AL DESBORDAMIENTO DEL HEADER */
     box-sizing: border-box;
 }
 
-/* Título más grande en ordenador */
+/* TÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­tulo mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s grande en ordenador */
 header h1 {
     margin: 0;
     font-size: 2.2rem;
-    /* Escala el título más grande */
+    /* Escala el tÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­tulo mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s grande */
     letter-spacing: 1px;
-    /* Separa un pelín las letras para que respire */
+    /* Separa un pelÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­n las letras para que respire */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     /* Sombrita para que se lea mejor sobre el cristal */
 }
@@ -84,21 +84,21 @@ nav a {
     font-weight: bold;
     transition: color 0.3s ease;
     position: relative;
-    /* ¡Muy importante para que la línea sepa dónde colocarse! */
+    /* ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡Muy importante para que la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea sepa dÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³nde colocarse! */
 }
 
 nav a:hover {
     color: #123c1c;
 }
 
-/* La magia de la línea que aparece debajo */
+/* La magia de la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea que aparece debajo */
 nav a::after {
     content: '';
     position: absolute;
     width: 0;
     /* Al principio no tiene ancho (no se ve) */
     height: 2px;
-    /* Grosor de la línea */
+    /* Grosor de la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea */
     bottom: -5px;
     /* La bajamos un poquito para que no tache el texto */
     left: 0;
@@ -109,10 +109,10 @@ nav a::after {
 
 nav a:hover::after {
     width: 100%;
-    /* Al pasar el ratón, la línea crece hasta ocupar todo el texto */
+    /* Al pasar el ratÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n, la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea crece hasta ocupar todo el texto */
 }
 
-/* Evitamos que al botón blanco de "Mi Perfil" le salga la línea porque queda raro */
+/* Evitamos que al botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n blanco de "Mi Perfil" le salga la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea porque queda raro */
 nav a.btn-perfil::after {
     display: none;
 }
@@ -130,7 +130,7 @@ nav a.btn-perfil::after {
     width: auto;
 }
 
-/* Botón especial para el perfil del usuario */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n especial para el perfil del usuario */
 nav a.btn-perfil {
     background: rgb(4, 15, 3);
     color: #4CAF50;
@@ -139,15 +139,15 @@ nav a.btn-perfil {
 }
 
 /* =========================================
-   DISEÑO PARA MÓVILES (Menú Hamburguesa)
+   DISEÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã…â€œO PARA MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“VILES (MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº Hamburguesa)
    ========================================= */
 
-/* Botón de las 3 líneas (oculto en ordenador) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de las 3 lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­neas (oculto en ordenador) */
 .btn-menu {
     display: none;
     /* Se mantiene oculto en ordenador */
 
-    /* Diseño del cuadrado */
+    /* DiseÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±o del cuadrado */
     background: rgba(19, 77, 43, 0.751);
     /* Un fondo blanco semitransparente */
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -155,7 +155,7 @@ nav a.btn-perfil {
     border-radius: 10px;
     /* Esquinas ligeramente redondeadas */
 
-    /* Tamaño fijo para que sea un cuadrado perfecto */
+    /* TamaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±o fijo para que sea un cuadrado perfecto */
     width: 45px;
     height: 45px;
 
@@ -163,7 +163,7 @@ nav a.btn-perfil {
     font-size: 24px;
     cursor: pointer;
     transition: background 0.3s ease;
-    /* Animación suave al pulsarlo */
+    /* AnimaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n suave al pulsarlo */
 }
 
 /* Aseguramos que el nav se mantenga horizontal en ordenador */
@@ -172,12 +172,12 @@ nav a.btn-perfil {
     align-items: center;
 }
 
-/* Efecto al pasar el dedo/ratón por encima del botón */
+/* Efecto al pasar el dedo/ratÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n por encima del botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n */
 .btn-menu:hover {
     background: rgba(17, 69, 41, 0.473);
 }
 
-/* Cuando la pantalla sea menor a 768px (móviles y tablets pequeñas) */
+/* Cuando la pantalla sea menor a 768px (mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³viles y tablets pequeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±as) */
 @media (max-width: 990px) {
 
     .btn-menu {
@@ -190,7 +190,7 @@ nav a.btn-perfil {
     }
 
 
-    /* ... (deja arriba tu código del .btn-menu) ... */
+    /* ... (deja arriba tu cÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³digo del .btn-menu) ... */
 
     header nav {
         display: flex;
@@ -214,28 +214,28 @@ nav a.btn-perfil {
         padding: 1rem 0;
         margin-top: 15px;
 
-        /* Animación tipo "persiana" hacia abajo */
+        /* AnimaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n tipo "persiana" hacia abajo */
         clip-path: inset(0 0 100% 0);
         transition: clip-path 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-        /* CRUCIAL: Evita que las cosas se salgan del menú */
+        /* CRUCIAL: Evita que las cosas se salgan del menÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº */
         box-sizing: border-box;
     }
 
     #toggle-menu:checked~nav {
         clip-path: inset(0 -20px -20px -20px);
-        /* Márgenes negativos para que no corte la sombra */
+        /* MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡rgenes negativos para que no corte la sombra */
     }
 
     /* 1. ENLACES PRINCIPALES (Inicio, Soporte...) ALINEADOS A LA IZQUIERDA */
-    /* El selector "> a" asegura que NO afectemos a los botones de sesión */
+    /* El selector "> a" asegura que NO afectemos a los botones de sesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n */
     header nav>a {
         margin: 10px 20px;
         display: inline-block;
         font-size: 1.1rem;
         color: #333;
         align-self: flex-start;
-        /* Esta línea los empuja estrictamente a la izquierda */
+        /* Esta lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea los empuja estrictamente a la izquierda */
     }
 
     header nav>a:hover {
@@ -246,7 +246,7 @@ nav a.btn-perfil {
         background-color: rgb(21, 66, 31);
     }
 
-    /* 2. ZONA DE USUARIO DENTRO DEL MENÚ MÓVIL */
+    /* 2. ZONA DE USUARIO DENTRO DEL MENÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“VIL */
     .zona-usuario {
         display: flex;
         flex-direction: column;
@@ -255,11 +255,11 @@ nav a.btn-perfil {
 
         width: 100%;
 
-        /* FORZAMOS a limpiar los márgenes del ordenador para que no lo empuje a la derecha */
+        /* FORZAMOS a limpiar los mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡rgenes del ordenador para que no lo empuje a la derecha */
         margin: 10px 0 0 0 !important;
         padding: 20px 0 10px 0 !important;
 
-        /* ELIMINAMOS la línea rara de la izquierda por completo */
+        /* ELIMINAMOS la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea rara de la izquierda por completo */
         border-left: none !important;
         border-top: 1px solid rgba(0, 0, 0, 0.15);
         /* Solo dejamos el separador de arriba */
@@ -296,7 +296,7 @@ nav a.btn-perfil {
 }
 
 /* =========================================
-   2. Menú Lateral (Fijo en PC, Plegable en Móvil)
+   2. MenÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº Lateral (Fijo en PC, Plegable en MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³vil)
    ========================================= */
 aside {
     background: rgba(255, 255, 255, 0.267);
@@ -315,7 +315,7 @@ aside {
     box-sizing: border-box;
 }
 
-/* En pantallas grandes, ocultamos el botón de la huella */
+/* En pantallas grandes, ocultamos el botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de la huella */
 .btn-huella {
     display: none;
 }
@@ -327,11 +327,11 @@ aside {
         box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
         overflow: hidden;
         margin-right: 20px;
-        /* Separación entre el dashboard y el contenido central */
+        /* SeparaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n entre el dashboard y el contenido central */
     }
 }
 
-/* --- MÓVILES Y TABLETS (Menos de 990px) --- */
+/* --- MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“VILES Y TABLETS (Menos de 990px) --- */
 @media (max-width: 990px) {
 
     /* Hacemos que la caja por dentro tenga menos hueco sobrante */
@@ -339,12 +339,12 @@ aside {
         padding: 1rem;
     }
 
-    /* El menú se oculta a la izquierda por defecto */
+    /* El menÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº se oculta a la izquierda por defecto */
     aside {
         position: fixed;
-        /* Al no tener 'height', cogerá el tamaño exacto de su contenido */
+        /* Al no tener 'height', cogerÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ el tamaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±o exacto de su contenido */
         top: 150px;
-        /* AQUÍ CAMBIAS LA ALTURA DE TODO EL BLOQUE DEL MENÚ */
+        /* AQUÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â CAMBIAS LA ALTURA DE TODO EL BLOQUE DEL MENÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ */
         left: 0;
         border-radius: 0 15px 15px 0;
         /* Esquinas redondeadas por la derecha */
@@ -358,12 +358,12 @@ aside {
         margin-left: 0;
     }
 
-    /* Mostramos el botón de la huella */
+    /* Mostramos el botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de la huella */
     .btn-huella {
         display: flex;
         position: absolute;
         top: 20px;
-        /* Altura de la pestaña RESPECTO a la caja blanca del menú */
+        /* Altura de la pestaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±a RESPECTO a la caja blanca del menÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº */
         right: -45px;
         width: 45px;
         height: 50px;
@@ -376,13 +376,13 @@ aside {
         align-items: center;
         cursor: pointer;
         box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.4);
-        /* Sombra más fuerte y pronunciada */
+        /* Sombra mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s fuerte y pronunciada */
         transition: background 0.3s;
         z-index: 501;
     }
 
     .btn-huella:hover {
-        background: #386044;
+        background: #1a1a1a;
     }
 }
 
@@ -400,18 +400,18 @@ aside a {
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
-    /* Cambiado de block a inline-block para que la línea mida lo mismo que el texto */
+    /* Cambiado de block a inline-block para que la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea mida lo mismo que el texto */
     padding: 5px 0;
     transition: color 0.3s;
     position: relative;
-    /* Necesario para la línea ::after */
+    /* Necesario para la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea ::after */
 }
 
 aside a:hover {
     color: #1a4d2e;
 }
 
-/* Efecto de la línea debajo (igual que el header) */
+/* Efecto de la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea debajo (igual que el header) */
 aside a::after {
     content: '';
     position: absolute;
@@ -464,10 +464,10 @@ main {
 }
 
 /* =========================================
-   4. PIE DE PÁGINA (Footer Cristal Completo)
+   4. PIE DE PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂGINA (Footer Cristal Completo)
    ========================================= */
 footer {
-    /* EFECTO CRISTAL IDÉNTICO AL HEADER */
+    /* EFECTO CRISTAL IDÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â°NTICO AL HEADER */
     background: rgba(163, 163, 163, 0.55);
     backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
     -webkit-backdrop-filter: blur(20px) grayscale(1) brightness(1.3);
@@ -481,7 +481,7 @@ footer {
     /* Ancho completo y sin redondeos */
     width: 100%;
     margin: 0;
-    /* Quitamos los márgenes laterales */
+    /* Quitamos los mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡rgenes laterales */
     border-radius: 0;
     /* Bordes rectos */
 
@@ -491,10 +491,10 @@ footer {
     margin-top: auto;
     color: #333;
 
-    /* Importante para que el padding no desborde el ancho de la página */
+    /* Importante para que el padding no desborde el ancho de la pÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡gina */
     box-sizing: border-box;
 
-    /* Estas dos líneas obligan al footer (y a su sombra) a ponerse por encima del resto de la página */
+    /* Estas dos lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­neas obligan al footer (y a su sombra) a ponerse por encima del resto de la pÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡gina */
     position: relative;
     z-index: 10;
 }
@@ -504,11 +504,11 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* Permite que colapsen en móvil */
+    /* Permite que colapsen en mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³vil */
     gap: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    /* Línea separadora suave */
+    /* LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea separadora suave */
     padding-bottom: 20px;
 }
 
@@ -521,7 +521,7 @@ footer {
 .footer-seccion h3 {
     margin-top: 0;
     color: rgb(21, 66, 31);
-    /* El mismo verde oscuro que usas en el hover del menú */
+    /* El mismo verde oscuro que usas en el hover del menÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº */
     font-size: 1.2rem;
 }
 
@@ -534,7 +534,7 @@ footer {
     font-size: 0.95rem;
 }
 
-/* Efecto al pasar el ratón por los enlaces del footer */
+/* Efecto al pasar el ratÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n por los enlaces del footer */
 .footer-seccion a:hover {
     color: rgb(21, 66, 31);
     font-weight: bold;
@@ -558,12 +558,12 @@ footer {
 
 .logo-cabecera {
     height: 50px;
-    /* Ajusta este número para hacer el logo más grande o pequeño */
+    /* Ajusta este nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºmero para hacer el logo mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s grande o pequeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±o */
     width: auto;
 }
 
 /* =========================================
-   SECCIÓN DE PORTADA (Imagen de fondo gigante)
+   SECCIÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“N DE PORTADA (Imagen de fondo gigante)
    ========================================= */
 .seccion-portada {
     /* OJO: ../img/ sube una carpeta desde css/ y entra a img/ */
@@ -576,7 +576,7 @@ footer {
 
     width: 100%;
     /* 60vh significa "ocupa el 60% de la altura de la pantalla visible" */
-    /* Puedes cambiarlo a 80vh o 100vh si quieres que sea aún más grande */
+    /* Puedes cambiarlo a 80vh o 100vh si quieres que sea aÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºn mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s grande */
     min-height: 60vh;
 
     display: flex;
@@ -608,11 +608,11 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    /* Separación entre los botones */
+    /* SeparaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n entre los botones */
     margin-left: 15px;
     padding-left: 15px;
     border-left: 2px solid rgba(0, 0, 0, 0.1);
-    /* Línea vertical divisoria */
+    /* LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea vertical divisoria */
 }
 
 /* Quitar el subrayado por defecto de los enlaces */
@@ -620,12 +620,12 @@ footer {
     text-decoration: none;
 }
 
-/* Evitamos la línea de subrayado verde animada en estos botones */
+/* Evitamos la lÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea de subrayado verde animada en estos botones */
 .zona-usuario a::after {
     display: none !important;
 }
 
-/* Botón Iniciar Sesión (Principal) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n Iniciar SesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n (Principal) */
 .zona-usuario .btn-login {
     background: #4A7C59;
     /* Verde elegante */
@@ -639,20 +639,20 @@ footer {
 }
 
 .zona-usuario .btn-login:hover {
-    background: #386044;
+    background: #1a1a1a;
 }
 
-/* Botón Registrarse (Fondo negro, letras blancas) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n Registrarse (Fondo negro, letras blancas) */
 .zona-usuario .btn-registro {
     background: #1a1a1a;
     /* Negro elegante (casi puro) */
     color: white !important;
     /* Letras blancas */
 
-    /* Igualamos el padding al de Iniciar Sesión porque le quitamos el borde */
+    /* Igualamos el padding al de Iniciar SesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n porque le quitamos el borde */
     padding: 8px 18px;
     border: none;
-    /* Adiós al borde verde */
+    /* AdiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³s al borde verde */
 
     border-radius: 20px;
     margin-left: 0;
@@ -661,13 +661,13 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Efecto al pasar el ratón por encima del botón negro */
+/* Efecto al pasar el ratÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n por encima del botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n negro */
 .zona-usuario a.btn-registro:hover {
     background: #333333;
-    /* Se pone un poco gris oscuro para que notes que lo estás tocando */
+    /* Se pone un poco gris oscuro para que notes que lo estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s tocando */
 }
 
-/* Botón Mi Perfil (Píldora cristal) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n Mi Perfil (PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­ldora cristal) */
 .zona-usuario a.btn-perfil {
     background: rgba(255, 255, 255, 0.6);
     color: #1a1a1a !important;
@@ -683,7 +683,7 @@ footer {
 }
 
 /* =========================================
-   MODALES (INICIAR SESIÓN Y REGISTRO)
+   MODALES (INICIAR SESIÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“N Y REGISTRO)
    ========================================= */
 
 /* Fondo oscuro que cubre toda la pantalla */
@@ -694,7 +694,7 @@ footer {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.708);
-    /* Oscurece el fondo de atrás */
+    /* Oscurece el fondo de atrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -707,7 +707,7 @@ footer {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Área invisible para cerrar el modal al hacer clic fuera */
+/* ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Ârea invisible para cerrar el modal al hacer clic fuera */
 .modal-bg-close {
     position: absolute;
     top: 0;
@@ -739,7 +739,7 @@ footer {
     color: white;
     /* Textos en blanco para contrastar */
     backdrop-filter: blur(15px);
-    /* Efecto cristal traslúcido */
+    /* Efecto cristal traslÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºcido */
     -webkit-backdrop-filter: blur(15px);
 }
 
@@ -748,21 +748,21 @@ footer {
     transform: translateY(0);
 }
 
-/* Transparencia VERDE para Iniciar Sesión */
+/* Transparencia VERDE para Iniciar SesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n */
 .modal-verde {
     background: #4a7c5953;
-    /* Verde oscuro traslúcido */
+    /* Verde oscuro traslÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºcido */
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Transparencia NEGRA para Registro */
 .modal-negro {
     background: rgba(15, 15, 15, 0.365);
-    /* Negro/gris muy oscuro traslúcido */
+    /* Negro/gris muy oscuro traslÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºcido */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Botón para cerrar (la X) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n para cerrar (la X) */
 .btn-cerrar-modal {
     position: absolute;
     top: 15px;
@@ -777,7 +777,7 @@ footer {
 
 .btn-cerrar-modal:hover {
     color: #ff4c4c;
-    /* Se pone rojo al pasar el ratón */
+    /* Se pone rojo al pasar el ratÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n */
 }
 
 .modal-content h2 {
@@ -819,7 +819,7 @@ footer {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
-/* Botón de enviar (ahora por defecto Negro para Iniciar Sesión) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de enviar (ahora por defecto Negro para Iniciar SesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n) */
 .btn-submit-modal {
     width: 100%;
     padding: 12px;
@@ -842,14 +842,14 @@ footer {
     transform: scale(0.98);
 }
 
-/* Variante de botón para el modal de registro (ahora Verde) */
+/* Variante de botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n para el modal de registro (ahora Verde) */
 .btn-submit-registro {
     background: #4A7C59;
     color: white;
 }
 
 .btn-submit-registro:hover {
-    background: #386044;
+    background: #1a1a1a;
 }
 
 /* =========================================
@@ -888,7 +888,7 @@ footer {
     }
 }
 
-/* En móvil: sin márgenes laterales, ocupa todo el ancho */
+/* En mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³vil: sin mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡rgenes laterales, ocupa todo el ancho */
 @media (max-width: 990px) {
 
     .catalogo-container,
@@ -900,13 +900,14 @@ footer {
         border-radius: 0;
         border-left: none;
         border-right: none;
-        padding: 25px 20px 25px 75px;
-        /* espacio izquierdo para la pestaña de la huella */
+        padding: 25px 15px !important;
+        /* espacio izquierdo para la pestaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±a de la huella */
 
     }
 }
 
 .repo-header {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -938,12 +939,12 @@ footer {
     background: white;
     border: 1px solid #d0d7de;
     border-radius: 12px;
-    /* más redondeado para suavizar el corte inferior */
+    /* mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s redondeado para suavizar el corte inferior */
     overflow: hidden;
 }
 
-/* Color de fondo del README según si es perro o gato */
-/* ← Mismo color que las tarjetas del catálogo */
+/* Color de fondo del README segÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºn si es perro o gato */
+/* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â Mismo color que las tarjetas del catÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡logo */
 .readme-box-perro {
     background: #faf0cc9d;
 }
@@ -962,7 +963,7 @@ footer {
 
 .readme-content {
     padding: 30px 30px 50px 30px;
-    /* más padding abajo para suavizar el cierre */
+    /* mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡s padding abajo para suavizar el cierre */
 }
 
 .repo-image {
@@ -996,7 +997,7 @@ footer {
 }
 
 /* =========================================
-   FORMULARIO ADOPCIÓN (PULL REQUEST)
+   FORMULARIO ADOPCIÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“N (PULL REQUEST)
    ========================================= */
 .pr-header {
     margin-bottom: 30px;
@@ -1078,7 +1079,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* El sidebar en móviles pasa a tener 2 columnas y estilo caja para compactarlo */
+    /* El sidebar en mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³viles pasa a tener 2 columnas y estilo caja para compactarlo */
     .repo-sidebar {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1095,13 +1096,13 @@ footer {
         border-bottom: none;
     }
 
-    /* Las columnas de texto del README vuelven a 1 sola en móviles para no desbordar */
+    /* Las columnas de texto del README vuelven a 1 sola en mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³viles para no desbordar */
     .text-columns {
         column-count: 1 !important;
     }
 }
 
-/* Espacio extra en móviles para que la pestaña de la huella no tape el texto en las páginas interiores */
+/* Espacio extra en mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³viles para que la pestaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±a de la huella no tape el texto en las pÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ginas interiores */
 @media (max-width: 990px) {
 
     .catalogo-container,
@@ -1116,10 +1117,10 @@ footer {
 
 
 /* =========================================================
-   PÁGINA: EXPLORAR REPOSITORIOS (catalogo.blade.php)
+   PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂGINA: EXPLORAR REPOSITORIOS (catalogo.blade.php)
    ========================================================= */
 
-/* Barra de filtros rápidos */
+/* Barra de filtros rÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡pidos */
 .filtros-catalogo {
     margin-bottom: 30px;
     padding: 15px;
@@ -1167,7 +1168,7 @@ footer {
 }
 
 /* --- Tarjeta de animal (base) --- */
-/* overflow: visible para que la sombra y rotación no se recorten */
+/* overflow: visible para que la sombra y rotaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n no se recorten */
 .card-animal {
     border-radius: 14px;
     overflow: visible;
@@ -1182,18 +1183,18 @@ footer {
     overflow: hidden;
 }
 
-/* Perros: inclinadas a la derecha + fondo crema cálido */
+/* Perros: inclinadas a la derecha + fondo crema cÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lido */
 .card-perro {
     transform: rotate(1.5deg);
     background: #faf0cc9d;
-    /* ← CAMBIA AQUÍ el color del fondo de los PERROS */
+    /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â CAMBIA AQUÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â el color del fondo de los PERROS */
 }
 
 /* Gatos: inclinadas a la izquierda + fondo lavanda suave */
 .card-gato {
     transform: rotate(-1.5deg);
     background: #f0d8ffa1;
-    /* ← CAMBIA AQUÍ el color del fondo de los GATOS */
+    /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â CAMBIA AQUÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â el color del fondo de los GATOS */
 }
 
 /* Al hacer hover: se endereza, sube y escala ligeramente */
@@ -1252,7 +1253,7 @@ footer {
     margin-top: 10px;
 }
 
-/* Botón "Ver detalles de la rama" (verde igual que Iniciar Sesión) */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n "Ver detalles de la rama" (verde igual que Iniciar SesiÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n) */
 .btn-catalogo {
     display: block;
     width: 100%;
@@ -1291,13 +1292,13 @@ footer {
 }
 
 .btn-catalogo:hover {
-    background: #386044;
+    background: #1a1a1a;
     transform: scale(1.02);
 }
 
 
 /* =========================================================
-   PÁGINA: FICHA DEL ANIMAL (animal.blade.php)
+   PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂGINA: FICHA DEL ANIMAL (animal.blade.php)
    ========================================================= */
 
 /* Texto gris del breadcrumb "GuauHub / Explorar Repositorios /" */
@@ -1335,7 +1336,7 @@ footer {
     font-weight: bold;
 }
 
-/* Sección de 2 columnas de texto (Skills + Dependencias) */
+/* SecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de 2 columnas de texto (Skills + Dependencias) */
 .text-columns {
     column-count: 2;
     column-gap: 40px;
@@ -1347,7 +1348,7 @@ footer {
     break-inside: avoid;
 }
 
-/* Títulos sin margen superior dentro de las columnas */
+/* TÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­tulos sin margen superior dentro de las columnas */
 .mt-0 {
     margin-top: 0;
 }
@@ -1357,7 +1358,7 @@ footer {
     padding-left: 20px;
 }
 
-/* Bloque final con el botón de adoptar */
+/* Bloque final con el botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n de adoptar */
 .adoptar-cta {
     text-align: center;
     margin-top: 40px;
@@ -1365,7 +1366,7 @@ footer {
     border-top: 1px solid #eaeaea;
 }
 
-/* Botón principal de adopción */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n principal de adopciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n */
 .btn-adoptar-repo {
     background: #4A7C59;
     color: white;
@@ -1379,7 +1380,7 @@ footer {
 }
 
 .btn-adoptar-repo:hover {
-    background: #386044;
+    background: #1a1a1a;
 }
 
 /* Separador horizontal dentro del README */
@@ -1421,7 +1422,7 @@ footer {
     color: #d29922;
 }
 
-/* En móvil: el grid de metadatos pasa a 1 columna */
+/* En mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³vil: el grid de metadatos pasa a 1 columna */
 @media (max-width: 600px) {
     .repo-meta-grid {
         grid-template-columns: 1fr;
@@ -1430,7 +1431,7 @@ footer {
 
 
 /* =========================================================
-   PÁGINA: SOPORTE / CONTACTO (contacto.blade.php)
+   PÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂGINA: SOPORTE / CONTACTO (contacto.blade.php)
    ========================================================= */
 
 /* Caja del formulario de contacto */
@@ -1619,7 +1620,7 @@ footer {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* Botón que actúa como estrella con imágenes */
+/* BotÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n que actÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºa como estrella con imÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡genes */
 .btn-star-fav {
     background: none;
     border: none;
@@ -1672,4 +1673,784 @@ footer {
     vertical-align: middle;
     margin-right: 6px;
 }
-.img-title-icon { width: 40px; height: 40px; vertical-align: middle; }
+
+.img-title-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* Estilos para la historia en Inicio */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(74, 124, 89, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 35px 0;
+    border: 1px solid rgba(74, 124, 89, 0.15);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #4A7C59;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.cta-inicio {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.readme-content blockquote {
+    border-left: 4px solid #4A7C59;
+    padding: 15px 25px;
+    font-style: italic;
+    color: #444;
+    background: rgba(74, 124, 89, 0.03);
+    margin: 25px 0;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   DISEÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“O DINÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂMICO DE INICIO (OVERLAP)
+   ========================================= */
+
+/* Hero Section con Imagen inclinada */
+.hero-intro {
+    position: relative;
+    display: block;
+    margin-bottom: 120px;
+    padding: 60px 0;
+}
+
+.hero-text-overlap {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    min-width: 300px;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
+    text-align: justify;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 30px;
+    /* Bajada para que no se salga */
+    right: 0;
+    width: 65%;
+    height: 90%;
+    z-index: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: rotate(3deg);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+.hero-img-overlap {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TipografÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­a Justificada */
+.big-text,
+.secondary-text,
+.miembro-info p,
+.razon-content p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* SecciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n Equipo Overlap */
+.equipo-overlap {
+    margin-bottom: 120px;
+    position: relative;
+}
+
+.seccion-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4A7C59;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.titulo-grande {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.equipo-grid-dinamico {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.miembro-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.miembro-card:hover {
+    transform: translateY(-15px);
+    border-color: #4A7C59;
+}
+
+.miembro-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.puesto {
+    display: block;
+    color: #4A7C59;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.miembro-offset-2 {
+    margin-top: 40px;
+}
+
+/* SecciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n Razones Overlap */
+.razones-dinamicas {
+    margin-bottom: 100px;
+}
+
+.razon-bloque {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.razon-content {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px;
+    border-radius: 30px;
+    width: 60%;
+    position: relative;
+    z-index: 2;
+}
+
+.razon-content h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.lista-limpia {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.lista-limpia li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.lista-limpia li::before {
+    content: "ÃƒÆ’Ã‚Â¢Ãƒâ€¦Ã¢â‚¬Å“ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
+    position: absolute;
+    left: 0;
+    color: #4A7C59;
+    font-weight: bold;
+}
+
+.razon-decor-overlap {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 120%;
+    background: #f0f0f0;
+    border-radius: 40px;
+    z-index: 1;
+}
+
+/* Footer / CTA final */
+.final-cta-overlap {
+    text-align: center;
+    background: linear-gradient(135deg, #4A7C59 0%, #386044 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 80px !important;
+}
+
+.final-cta-overlap h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.botones-flex {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-principal-grande {
+    background: white;
+    color: #4A7C59;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+}
+
+.btn-principal-grande:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline-oscuro {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-outline-oscuro:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* SECCIÃƒÆ’Ã¢â‚¬Å“N RAZONES INVERTIDA */
+.razones-overlap-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 120px;
+    padding: 60px 0;
+}
+
+.razon-text-overlap {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    min-width: 300px;
+    background: #1a1a1a;
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.razon-text-overlap h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.razon-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: rotate(-3deg);
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+.razon-img-overlap {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.razon-text-overlap .lista-limpia li::before {
+    content: "\2713";
+    color: #2ecc71;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* SECCIÃƒÆ’Ã¢â‚¬Å“N RAZONES INVERTIDA */
+.razones-overlap-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 120px;
+    padding: 60px 0;
+}
+
+.razon-text-overlap {
+    position: relative;
+    z-index: 10;
+    width: 50%;
+    min-width: 300px;
+    background: #1a1a1a;
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+}
+
+.razon-text-overlap h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.razon-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 30px;
+    overflow: hidden;
+    transform: rotate(-3deg);
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+}
+
+.razon-img-overlap {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.razon-text-overlap .lista-limpia li::before {
+    content: "\2713";
+    color: #2ecc71;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+/* RESPONSIVIDAD INICIO (MOBILE S Y TABLETS) */
+@media (max-width: 900px) {
+    .hero-intro {
+        display: flex !important;
+        flex-direction: column !important;
+        /* Texto arriba, foto abajo */
+        align-items: center !important;
+    }
+
+    .razones-overlap-container {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        /* Texto arriba (era el 2Âº en el HTML), foto abajo (era el 1Âº) */
+        align-items: center !important;
+    }
+
+    .hero-intro,
+    .razones-overlap-container {
+        padding: 40px 15px !important;
+        margin-bottom: 100px !important;
+    }
+
+    .hero-image-container,
+    .razon-image-container {
+        position: relative !important;
+        width: 100% !important;
+        height: 300px !important;
+        transform: rotate(2deg) !important;
+        z-index: 1 !important;
+        margin-bottom: 0 !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+    .razon-image-container {
+        transform: rotate(-2deg) !important;
+    }
+
+    /* Solapamiento uniforme para MÃ³vil (Texto arriba, Foto abajo) */
+    .hero-text-overlap,
+    .razon-text-overlap {
+        position: relative !important;
+        z-index: 10 !important;
+        margin: 0 auto !important;
+        width: 92% !important;
+        max-width: 100% !important;
+        padding: 40px 25px !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+        text-align: justify !important;
+        border-radius: 20px !important;
+    }
+
+    .hero-image-container,
+    .razon-image-container {
+        position: relative !important;
+        z-index: 1 !important;
+        margin-top: -80px !important;
+        /* La foto sube y pisa la parte de abajo de la caja de texto */
+        width: 100% !important;
+        height: 300px !important;
+        transform: rotate(2deg) !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .razon-image-container {
+        transform: rotate(-2deg) !important;
+        /* InclinaciÃ³n opuesta para variar */
+    }
+}
+
+@media (max-width: 400px) {
+
+    .hero-text-overlap h1,
+    .razon-text-overlap h2 {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        font-size: 1.8rem !important;
+    }
+
+    .big-text {
+        font-size: 1.1rem !important;
+    }
+
+    .inicio-container {
+        padding: 10px !important;
+    }
+}
+
+
+
+
+
+
+/* AJUSTE FINAL MOBILE S/M */
+@media (max-width: 450px) {
+
+    .hero-text-overlap h1,
+    .razon-text-overlap h2 {
+        font-size: 1.5rem !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .hero-text-overlap,
+    .razon-text-overlap {
+        width: 96% !important;
+        padding: 20px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .inicio-container {
+        padding: 0 !important;
+        margin: 10px 0 !important;
+    }
+
+    .hero-image-container,
+    .razon-image-container {
+        height: 200px !important;
+    }
+}
+
+/* FIX AGRESIVO PARA CORTE DE TEXTO EN MÓVIL */
+@media (max-width: 480px) {
+
+    .hero-text-overlap,
+    .razon-text-overlap {
+        width: 98% !important;
+        padding: 20px 15px !important;
+        margin-left: 1% !important;
+        margin-right: 1% !important;
+        box-sizing: border-box !important;
+    }
+
+    p,
+    h1,
+    h2,
+    li {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+    }
+
+    .inicio-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        overflow-x: hidden !important;
+    }
+}
+
+html,
+body {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+}
+
+/* AJUSTES FINALES CTA MOBILE */
+@media (max-width: 600px) {
+    .final-cta-overlap {
+        padding: 60px 20px !important;
+        border-radius: 0 !important;
+    }
+
+    .final-cta-overlap h2 {
+        font-size: 1.8rem !important;
+        word-break: break-word !important;
+    }
+
+    .botones-flex {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+
+    .btn-principal-grande,
+    .btn-outline-oscuro {
+        width: 100% !important;
+        max-width: 280px !important;
+        padding: 15px 20px !important;
+        border-radius: 12px !important;
+        /* Pills mÃ¡s rectos para que no parezcan cÃ­rculos */
+        font-size: 1rem !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    .btn-outline-oscuro {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid white !important;
+    }
+}
+
+/* ESTILOS PÁGINA PERFIL */
+.perfil-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.perfil-header h1 {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.perfil-body {
+    min-height: 400px;
+}
+
+
+/* PROTECCIÓN HEADER MOBILE S */
+@media (max-width: 480px) {
+    header h1 {
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        white-space: nowrap !important;
+        font-size: 1.3rem !important;
+    }
+
+    header {
+        padding: 0.5rem 1rem !important;
+        margin: 10px !important;
+    }
+}
+
+/* AJUSTES PÁGINA PULL REQUEST (ADOPCIÓN) */
+.btn-github-green {
+    background: #4A7C59 !important;
+    /* Verde corporativo */
+    color: white !important;
+}
+
+.btn-github-green:hover {
+    background: #386044 !important;
+}
+
+.btn-secundario {
+    background: #1a1a1a !important;
+    /* Negro */
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    display: inline-block !important;
+}
+
+.btn-secundario:hover {
+    background: #333 !important;
+}
+
+@media (max-width: 990px) {
+    .pr-container {
+        padding: 25px 15px 25px 60px !important;
+        margin: 20px 0 0 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+
+    .pr-layout {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .pr-sidebar {
+        width: 100% !important;
+        margin-top: 10px !important;
+        border-left: none !important;
+        border-top: 1px solid #eaeaea !important;
+        padding-top: 20px !important;
+    }
+
+    .pr-header h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ETIQUETAS ADICIONALES */
+.etiqueta-purple {
+    background: #8957e5 !important;
+    color: white !important;
+}
+
+/* BOTONES IGUALES EN PR */
+.pr-actions {
+    display: flex !important;
+    gap: 15px !important;
+    margin-top: 30px !important;
+}
+
+.pr-actions .btn-principal,
+.pr-actions .btn-secundario {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
+    height: 45px !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+}
+
+/* AJUSTES FINALES PR BUTTONS Y LABELS */
+.etiqueta-purple {
+    background: #f0d8ffa1 !important;
+    /* Mismo que las tarjetas de gatos */
+    color: #1a1a1a !important;
+    /* Letra negra */
+    font-weight: bold !important;
+}
+
+.pr-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Siempre en fila en tablet/desktop */
+    gap: 10px !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.pr-actions .btn-principal,
+.pr-actions .btn-secundario {
+    height: 48px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    font-size: 0.9rem !important;
+    /* Un poco mÃ¡s pequeÃ±o para que quepa */
+    padding: 0 10px !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
+@media (max-width: 450px) {
+
+    .pr-actions .btn-principal,
+    .pr-actions .btn-secundario {
+        font-size: 0.8rem !important;
+        padding: 0 5px !important;
+    }
+}
+
+.pr-actions>* {
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 !important;
+}
+
+/* ETIQUETAS ESTILO PASTEL */
+.etiqueta {
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    font-weight: bold !important;
+    font-size: 0.8rem !important;
+    color: #1a1a1a !important;
+    /* Letras oscuras para todos los pasteles */
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.etiqueta-green {
+    background: #faf0cc9d !important;
+}
+
+/* Crema Perro */
+.etiqueta-purple {
+    background: #f0d8ffa1 !important;
+}
+
+/* Lavanda Gato */
+.etiqueta-blue {
+    background: #d8f0ff !important;
+}
+
+/* Azul pastel AdopciÃ³n */
+

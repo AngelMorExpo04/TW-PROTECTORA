@@ -19,7 +19,7 @@
                 <div class="pr-compare">
                     <span class="branch-badge base-branch">base: tu-casa</span>
                     <span class="compare-arrow">←</span>
-                    <span class="branch-badge compare-branch">compare: GuauHub/Max_v2</span>
+                    <span class="branch-badge compare-branch">compare: GuauHub/{{ $animal->name }}_v2</span>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                     <div class="sidebar-section">
                         <h3>Labels</h3>
                         <span class="etiqueta etiqueta-blue">Adopción</span>
-                        <span class="etiqueta etiqueta-green">Perro</span>
+                        <span class="etiqueta {{ strtolower($animal->species) === 'perro' ? 'etiqueta-green' : 'etiqueta-purple' }}">{{ ucfirst($animal->species) }}</span>
                     </div>
                 </div>
             </div>
