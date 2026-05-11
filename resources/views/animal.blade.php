@@ -87,9 +87,17 @@
 
                     <!-- Botón de adopción al final, centrado -->
                     <div class="adoptar-cta">
-                        <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
-                            Pull Request (Adoptar)
-                        </a>
+                        @auth
+                            @if(Auth::user()->role === 'user')
+                                <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
+                                    Pull Request (Adoptar)
+                                </a>
+                            @endif
+                        @else
+                            <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
+                                Pull Request (Adoptar)
+                            </a>
+                        @endauth
                     </div>
 
                 </div>

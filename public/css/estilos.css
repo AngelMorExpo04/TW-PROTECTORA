@@ -2494,3 +2494,16 @@ body {
  margin-right: 0.5em;
  font-size: 1.2rem;
 }
+
+/* AVISO PARA ADMINS EN FICHA */
+.admin-notice {
+    background: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 15px !important;
+    color: #57606a !important;
+    font-size: 0.95rem !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
