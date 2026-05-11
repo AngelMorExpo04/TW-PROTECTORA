@@ -893,10 +893,7 @@ footer {
     .contacto-container,
     .pr-container,
     .inicio-container {
-        margin: 20px 0 0 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
+        margin: 20px 0 0 0; border-radius: 0; border-left: none; border-right: none; box-shadow: none !important;
         padding: 25px 15px 25px 60px !important;
         /* espacio izquierdo para la pestaÃ±ita de la huella */
     }
@@ -1101,14 +1098,7 @@ footer {
 /* Espacio extra en mÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³viles para que la pestaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±a de la huella no tape el texto en las pÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ginas interiores */
 @media (max-width: 990px) {
 
-    .catalogo-container,
-    .contacto-container,
-    .repo-container,
-    .pr-container {
-        padding-left: 65px !important;
-        padding-right: 20px !important;
-        box-sizing: border-box;
-    }
+    .catalogo-container, .contacto-container, .repo-container, .pr-container, .inicio-container { padding-left: 65px !important; padding-right: 20px !important; box-sizing: border-box; } footer, .footer-contenido, .footer-seccion { box-shadow: none !important; border: none !important; }
 }
 
 
@@ -2175,10 +2165,7 @@ footer {
         margin-right: auto !important;
     }
 
-    .inicio-container {
-        padding: 0 15px 0 60px !important;
-        margin: 10px 0 !important;
-    }
+    .inicio-container { padding: 0 15px 0 60px !important; margin: 10px 0 0 0 !important; box-shadow: none !important; border: none !important; }
 
     .hero-image-container,
     .razon-image-container {
@@ -2212,7 +2199,7 @@ footer {
         width: 100vw !important;
         max-width: 100vw !important;
         padding: 0 15px 0 60px !important;
-        margin: 10px 0 !important;
+        margin: 10px 0 0 0 !important;
         overflow-x: hidden !important;
     }
 }
@@ -2225,10 +2212,7 @@ body {
 
 /* AJUSTES FINALES CTA MOBILE */
 @media (max-width: 600px) {
-    .final-cta-overlap {
-        padding: 60px 20px !important;
-        border-radius: 0 !important;
-    }
+    .final-cta-overlap { padding: 60px 20px !important; border-radius: 0 !important; box-shadow: none !important; border: none !important; }
 
     .final-cta-overlap h2 {
         font-size: 1.8rem !important;
@@ -2469,7 +2453,7 @@ body {
 .issues-list {
     list-style: none !important;
     padding: 0 !important;
-    margin: 10px 0 !important;
+    margin: 10px 0 0 0 !important;
 }
 .issues-list li {
     padding: 8px 12px !important;
@@ -2598,4 +2582,11 @@ body {
         text-align: center !important;
     }
 }
+
+
+
+
+
+
+
 
