@@ -33,6 +33,7 @@
                     <li><a href="/animales/gestion" class="enlace-admin">➕ Nuevo Repo (Alta Animal)</a></li>
                     <li><a href="/panel-salud" class="enlace-admin">🐛 Issues Sanitarios (Salud)</a></li>
                     <li><a href="/solicitudes-pendientes" class="enlace-admin">📬 Merge Requests (Adopciones)</a></li>
+                    <li><a href="/perfil"><img src="{{ asset('img/settings-green.png') }}" alt="settings" class="img-star-inline"> Settings</a></li>
                 </ul>
             @endif
         @endauth

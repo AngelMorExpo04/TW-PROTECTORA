@@ -39,7 +39,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->intended('/catalogo')->with('success', '¡Cuenta creada con éxito! Has iniciado sesión.');
+        return redirect()->intended('/')->with('success', '¡Cuenta creada con éxito! Has iniciado sesión.');
     }
 
     public function login(Request $request)
@@ -54,7 +54,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/catalogo')->with('success', 'Has iniciado sesión correctamente.');
+            return redirect()->intended('/')->with('success', 'Has iniciado sesión correctamente.');
         }
 
         return back()->withErrors([

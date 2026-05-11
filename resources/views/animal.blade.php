@@ -16,7 +16,13 @@
         <main class="repo-container">
             <!-- Cabecera del Repositorio -->
             <div class="repo-header">
-                <h2><span class="texto-gris">GuauHub / Explorar Repositorios /</span> {{ $animal->name }}</h2>
+                <h2>
+                    <span class="texto-gris">
+                        <a href="/" style="color: inherit; text-decoration: none;">GuauHub</a> / 
+                        <a href="/catalogo" style="color: inherit; text-decoration: none;">Explorar Repositorios</a> /
+                    </span> 
+                    {{ $animal->name }}
+                </h2>
             </div>
 
             <!-- Todo el contenido dentro de un único README box -->
@@ -62,7 +68,13 @@
 
                         <div class="meta-section">
                             <h3>🐛 Issues (Estado de Salud)</h3>
-                            <p>{{ $animal->health_status }}</p>
+                            <ul class="issues-list">
+                                @foreach(explode('.', $animal->health_status) as $issue)
+                                    @if(trim($issue))
+                                        <li>{{ trim($issue) }}</li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
 
                         <div class="meta-section">
@@ -76,7 +88,7 @@
                     <!-- Botón de adopción al final, centrado -->
                     <div class="adoptar-cta">
                         <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
-                            🍴 Fork &amp; Pull Request (Adoptar)
+                            Pull Request (Adoptar)
                         </a>
                     </div>
 

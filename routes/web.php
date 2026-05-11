@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\AdoptionRequestController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,10 +36,11 @@ Route::middleware('auth')->group(function () {
     // Favoritos
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('/mis-favoritos', [App\Http\Controllers\FavoriteController::class, 'index'])->name('favoritos.index');
-});
 
-Route::middleware('auth')->group(function () {
+    // Perfil / Settings
     Route::get('/perfil', function () {
         return view('perfil');
     });
+    Route::post('/perfil/update', [UserController::class, 'updateProfile'])->name('perfil.update');
+    Route::post('/perfil/password', [UserController::class, 'updatePassword'])->name('perfil.password');
 });
