@@ -32,6 +32,8 @@ Route::get('/animal/{id}', [AnimalController::class, 'show']);
 Route::middleware('auth')->group(function () {
     Route::get('/adopcion/{animal_id}', [AdoptionRequestController::class, 'create']);
     Route::post('/adopcion', [AdoptionRequestController::class, 'store']);
+    Route::get('/mis-solicitudes', [AdoptionRequestController::class, 'index'])->name('solicitudes.index');
+    Route::post('/solicitud/update/{id}', [AdoptionRequestController::class, 'update'])->name('solicitudes.update');
     
     // Favoritos
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');

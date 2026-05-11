@@ -23,13 +23,35 @@ class AdoptionRequestController extends Controller
         ]);
 
         AdoptionRequest::create([
-            'user_id' => Auth::id(), // Puede ser null si el usuario no ha iniciado sesión, asegúrate de añadir middleware 'auth' si es obligatorio
+            'user_id' => Auth::id(),
             'animal_id' => $request->animal_id,
             'application_text' => $request->application_text,
             'status' => 'pending',
         ]);
 
-        // Redirigimos de vuelta al catálogo con un mensaje de éxito (que luego podremos mostrar en la vista)
         return redirect('/catalogo')->with('success', 'Pull Request (Solicitud de adopción) enviada con éxito.');
+    }
+
+    public function index()
+    {
+        $solicitudes = Auth::user()->adoptionRequests()->with('animal')->get();
+        return view('mis-solicitudes', compact('solicitudes'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $solicitud = AdoptionRequest::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
+
+        $request->validate([
+            'application_text' => 'required|string|min:50',
+        ]);
+
+        $solicitud->update([
+            'application_text' => $request->application_text,
+        ]);
+
+        return back()->with('success', '¡Descripción del Pull Request actualizada!');
     }
 }
