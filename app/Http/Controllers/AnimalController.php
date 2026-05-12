@@ -27,4 +27,16 @@ class AnimalController extends Controller
         $animal = Animal::findOrFail($id);
         return view('animal', compact('animal'));
     }
+
+    public function create()
+    {
+        // Por ahora redirigimos al catálogo o mostramos una vista simple
+        return view('catalogo')->with('info', 'La funcionalidad de añadir animales estará disponible pronto.');
+    }
+
+    public function healthPanel()
+    {
+        $animales = Animal::all(); // En el futuro filtrar por problemas de salud
+        return view('catalogo', compact('animales'))->with('info', 'Panel de Salud en desarrollo.');
+    }
 }

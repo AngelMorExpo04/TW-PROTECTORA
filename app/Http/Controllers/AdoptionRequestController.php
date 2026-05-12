@@ -54,4 +54,10 @@ class AdoptionRequestController extends Controller
 
         return back()->with('success', '¡Descripción del Pull Request actualizada!');
     }
+
+    public function adminIndex()
+    {
+        $solicitudes = AdoptionRequest::with('animal', 'user')->orderBy('created_at', 'desc')->get();
+        return view('mis-solicitudes', compact('solicitudes'))->with('isAdmin', true);
+    }
 }
