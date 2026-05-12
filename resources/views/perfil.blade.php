@@ -55,13 +55,13 @@
                         <p class="settings-info-text">Usado para notificaciones y recuperación de cuenta.</p>
                     </div>
 
-                    <div style="padding-top: 20px; margin-top: 40px;">
+                    <div class="pt-section">
                         <button type="submit" class="btn-save-settings">Guardar Cambios</button>
                     </div>
                 </form>
 
-                <div style="border-top: 1px solid #eaeaea; margin-top: 60px; padding-top: 40px;">
-                    <div class="seccion-label" style="color: #cf222e;">Seguridad</div>
+                <div class="mt-separator">
+                    <div class="seccion-label text-danger-github">Seguridad</div>
                     <h1>Cambiar Contraseña</h1>
                     
                     <form action="{{ route('perfil.password') }}" method="POST">
@@ -84,8 +84,8 @@
                             <input type="password" id="new_password_confirmation" name="new_password_confirmation" class="settings-input" required>
                         </div>
 
-                        <div style="padding-top: 20px; margin-top: 40px;">
-                            <button type="submit" class="btn-save-settings" style="background: #1a1a1a;">Actualizar Contraseña</button>
+                        <div class="pt-section">
+                            <button type="submit" class="btn-save-settings btn-black-github">Actualizar Contraseña</button>
                         </div>
                     </form>
                 </div>

@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Pull Requests - GuauHub</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <style>
-        /* Lógica CSS para mostrar/ocultar edición sin JS */
-        .edit-toggle:checked ~ .solicitud-content { display: none; }
-        .edit-toggle:checked ~ .solicitud-edit-form { display: block !important; }
-        .edit-toggle:not(:checked) ~ .solicitud-edit-form { display: none; }
-    </style>
+
 </head>
 <body>
 
@@ -70,7 +65,7 @@
                                 <div class="form-actions mt-2">
                                     <button type="submit" class="btn-principal btn-github-green btn-small">Save Changes</button>
                                     <!-- El botón cancelar también es un label que desactiva el checkbox -->
-                                    <label for="edit-toggle-{{ $solicitud->id }}" class="btn-secundario btn-small cursor-pointer" style="display: inline-block;">Cancel</label>
+                                    <label for="edit-toggle-{{ $solicitud->id }}" class="btn-secundario btn-small cursor-pointer">Cancel</label>
                                 </div>
                             </form>
                         </div>

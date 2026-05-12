@@ -24,7 +24,7 @@
             @endif
 
             @if(session('error'))
-                <div class="alert-error" style="background: #f8d7da; color: #721c24; padding: 12px 18px; border-radius: 8px; margin-bottom: 18px; border: 1px solid #f5c6cb;">
+                <div class="alert-error">
                     {{ session('error') }}
                 </div>
             @endif
@@ -48,7 +48,7 @@
                                     </h3>
                                     <span class="status-badge status-pending">Pending review</span>
                                     <br>
-                                    <small style="color: #8b949e;">
+                                    <small class="text-muted">
                                         Abierta por <strong>{{ $solicitud->user->username ?? 'Usuario desconocido' }}</strong>
                                         el {{ $solicitud->created_at->format('d/m/Y H:i') }}
                                     </small>
@@ -62,23 +62,26 @@
                             </div>
                         </div>
 
-                        <div class="form-actions mt-2" style="display: flex; gap: 10px; padding: 0 20px 20px;">
-                            <!-- Botón Aceptar (Merge) -->
-                            <form action="{{ route('admin.solicitudes.action', $solicitud->id) }}" method="POST">
+                        <div class="form-actions mt-2 flex-gap-10">
+                            <!-- Disparadores de Modales (Las etiquetas pueden estar en cualquier parte) -->
+                            <label for="confirm-merge-{{ $solicitud->id }}" class="btn-principal btn-github-green btn-small cursor-pointer">
+                                ✓ Merge
+                            </label>
+
+                            <label for="confirm-close-{{ $solicitud->id }}" class="btn-secundario btn-small cursor-pointer btn-danger-github">
+                                ✕ Close
+                            </label>
+
+                            <!-- Formulario Oculto de Aprobación -->
+                            <form id="form-approve-{{ $solicitud->id }}" action="{{ route('admin.solicitudes.action', $solicitud->id) }}" method="POST" class="d-none">
                                 @csrf
                                 <input type="hidden" name="action" value="approve">
-                                <button type="submit" class="btn-principal btn-github-green btn-small" onclick="return confirm('¿Seguro que quieres APROBAR esta solicitud? El animal será eliminado del catálogo.')">
-                                    ✓ Merge (Aprobar)
-                                </button>
                             </form>
 
-                            <!-- Botón Rechazar (Close) -->
-                            <form action="{{ route('admin.solicitudes.action', $solicitud->id) }}" method="POST">
+                            <!-- Formulario Oculto de Rechazo -->
+                            <form id="form-reject-{{ $solicitud->id }}" action="{{ route('admin.solicitudes.action', $solicitud->id) }}" method="POST" class="d-none">
                                 @csrf
                                 <input type="hidden" name="action" value="reject">
-                                <button type="submit" class="btn-secundario btn-small" style="background: #da3633; color: white; border: none;" onclick="return confirm('¿Seguro que quieres RECHAZAR esta solicitud?')">
-                                    ✕ Close (Rechazar)
-                                </button>
                             </form>
                         </div>
                     </div>
@@ -87,6 +90,39 @@
             @endif
         </main>
     </div>
+
+    <!-- 
+       ZONA DE MODALES (FUERA DE LOS CONTENEDORES) 
+       Para que el 'fixed' sea respecto a la pantalla completa y el z-index 
+       no esté limitado por los padres.
+    -->
+    @foreach($solicitudes as $solicitud)
+        <!-- Modal Aprobar -->
+        <input type="checkbox" id="confirm-merge-{{ $solicitud->id }}" class="modal-confirm-toggle d-none">
+        <div class="modal-confirm-overlay">
+            <div class="modal-confirm-content">
+                <h2>¿Confirmar Merge?</h2>
+                <p>¿Estás seguro de que quieres <strong>APROBAR</strong> esta solicitud? El animal será eliminado del catálogo definitivamente.</p>
+                <div class="modal-confirm-actions">
+                    <label for="confirm-merge-{{ $solicitud->id }}" class="btn-secundario cursor-pointer btn-modal-red">Cancelar</label>
+                    <button type="submit" form="form-approve-{{ $solicitud->id }}" class="btn-principal">Confirmar Merge</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Rechazar -->
+        <input type="checkbox" id="confirm-close-{{ $solicitud->id }}" class="modal-confirm-toggle d-none">
+        <div class="modal-confirm-overlay">
+            <div class="modal-confirm-content modal-confirm-negro">
+                <h2>¿Cerrar Pull Request?</h2>
+                <p>¿Estás seguro de que quieres <strong>RECHAZAR</strong> esta solicitud? La petición se borrará pero el animal seguirá disponible.</p>
+                <div class="modal-confirm-actions">
+                    <label for="confirm-close-{{ $solicitud->id }}" class="btn-secundario cursor-pointer btn-modal-red">Cancelar</label>
+                    <button type="submit" form="form-reject-{{ $solicitud->id }}" class="btn-secundario btn-danger-github">Confirmar Cierre</button>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     @include('layouts.footer')
 

@@ -18,8 +18,8 @@
             <div class="repo-header">
                 <h2>
                     <span class="texto-gris">
-                        <a href="/" style="color: inherit; text-decoration: none;">GuauHub</a> / 
-                        <a href="/catalogo" style="color: inherit; text-decoration: none;">Explorar Repositorios</a> /
+                        <a href="/" class="breadcrumb-link">GuauHub</a> / 
+                        <a href="/catalogo" class="breadcrumb-link">Explorar Repositorios</a> /
                     </span> 
                     {{ $animal->name }}
                 </h2>
