@@ -43,11 +43,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('/mis-favoritos', [App\Http\Controllers\FavoriteController::class, 'index'])->name('favoritos.index');
 
-    // Tickets (Admin)
-    Route::get('/admin/tickets', [ContactTicketController::class, 'index'])->name('admin.tickets');
+    // Gestión de Animales (Admin)
+    Route::get('/animales/gestion', [AnimalController::class, 'create'])->name('admin.animales.create');
+    Route::get('/panel-salud', [AnimalController::class, 'healthPanel'])->name('admin.health');
+    Route::get('/solicitudes-pendientes', [AdoptionRequestController::class, 'adminIndex'])->name('admin.solicitudes');
+
     // Solicitudes de adopción (Admin/Voluntario)
     Route::get('/solicitudes-pendientes', [AdoptionRequestController::class, 'adminIndex'])->name('admin.solicitudes');
     Route::post('/solicitudes-pendientes/{id}/action', [AdoptionRequestController::class, 'adminAction'])->name('admin.solicitudes.action');
+    //Tickets (Admin)
+    Route::get('/tickets', [ContactTicketController::class, 'index'])->name('admin.tickets');
     // Perfil / Settings
     Route::get('/perfil', function () {
         return view('perfil');

@@ -24,6 +24,6 @@ class ContactTicketController extends Controller
     public function index()
     {
         $tickets = ContactTicket::orderBy('created_at', 'desc')->get();
-        return view('admin.tickets', compact('tickets'));
+        return view('tickets', compact('tickets'));
     }
 }

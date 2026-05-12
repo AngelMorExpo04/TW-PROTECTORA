@@ -70,7 +70,7 @@ class AdoptionRequestController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('admin.solicitudes', compact('solicitudes'));
+        return view('mis-solicitudes', compact('solicitudes'));
     }
 
     /**
