@@ -5,6 +5,8 @@ use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\AdoptionRequestController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactTicketController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,6 +15,8 @@ Route::get('/', function () {
 Route::get('/contacto', function () {
     return view('contacto');
 });
+// Contacto
+Route::post('/contacto', [ContactTicketController::class, 'store']);
 
 // Rutas de Autenticación
 Route::post('/register', [AuthController::class, 'register']);
@@ -39,6 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('/mis-favoritos', [App\Http\Controllers\FavoriteController::class, 'index'])->name('favoritos.index');
 
+    // Tickets (Admin)
+    Route::get('/admin/tickets', [ContactTicketController::class, 'index'])->name('admin.tickets');
     // Perfil / Settings
     Route::get('/perfil', function () {
         return view('perfil');

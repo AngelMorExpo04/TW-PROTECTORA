@@ -18,7 +18,8 @@
             <p>¿Tienes dudas sobre cómo hacer un fork a alguno de nuestros animales o sobre el proceso de adopción (Pull Request)? ¡Abre un ticket de soporte enviándonos este formulario!</p>
 
             <div class="form-contacto">
-                <form action="#" method="POST">
+                <form action="/contacto" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="nombre">Nombre del desarrollador (Tú)</label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Ej: Linus Torvalds">
