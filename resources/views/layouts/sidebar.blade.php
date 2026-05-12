@@ -33,6 +33,7 @@
                     <li><a href="/animales/gestion" class="enlace-admin"><span style="color: #4A7C59; font-weight: bold; font-size: 2rem; margin-right: 8px; vertical-align: middle; line-height: 1;">+</span> Nuevo Repo</a></li>
                     <li><a href="/panel-salud" class="enlace-admin"><img src="{{ asset('img/health-green.png') }}" alt="health" class="img-star-inline" style="width: 25px; height: 25px;"> Issues Sanitarios </a></li>
                     <li><a href="/solicitudes-pendientes" class="enlace-admin"><img src="{{ asset('img/mailbox-green.png') }}" alt="mailbox" class="img-star-inline" style="width: 25px; height: 25px;"> Merge Requests</a></li>
+                    <li><a href="/admin/tickets" class="enlace-admin"><img src="{{ asset('img/mailbox-green.png') }}" alt="tickets" class="img-star-inline" style="width: 25px; height: 25px;"> Tickets</a></li>
                     <li><a href="/perfil"><img src="{{ asset('img/settings-green.png') }}" alt="settings" class="img-star-inline"> Settings</a></li>
                 </ul>
             @endif
