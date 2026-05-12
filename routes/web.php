@@ -45,6 +45,9 @@ Route::middleware('auth')->group(function () {
 
     // Tickets (Admin)
     Route::get('/admin/tickets', [ContactTicketController::class, 'index'])->name('admin.tickets');
+    // Solicitudes de adopción (Admin/Voluntario)
+    Route::get('/solicitudes-pendientes', [AdoptionRequestController::class, 'adminIndex'])->name('admin.solicitudes');
+    Route::post('/solicitudes-pendientes/{id}/action', [AdoptionRequestController::class, 'adminAction'])->name('admin.solicitudes.action');
     // Perfil / Settings
     Route::get('/perfil', function () {
         return view('perfil');
