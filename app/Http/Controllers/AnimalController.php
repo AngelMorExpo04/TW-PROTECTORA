@@ -30,13 +30,75 @@ class AnimalController extends Controller
 
     public function create()
     {
-        // Por ahora redirigimos al catálogo o mostramos una vista simple
-        return view('catalogo')->with('info', 'La funcionalidad de añadir animales estará disponible pronto.');
+        if (auth()->user()->role !== 'voluntario') {
+            return redirect('/catalogo')->withErrors(['error' => 'No tienes permiso para crear repositorios.']);
+        }
+        return view('animal-create');
+    }
+
+    public function store(Request $request)
+    {
+        if (auth()->user()->role !== 'voluntario') {
+            return redirect('/catalogo')->withErrors(['error' => 'No tienes permiso para crear repositorios.']);
+        }
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'species' => 'required|string|max:255',
+            'breed' => 'nullable|string|max:255',
+            'birth_date' => 'required|date',
+            'sex' => 'required|in:male,female',
+            'health_status' => 'required|string',
+            'description' => 'required|string',
+            'image_path' => 'required|url',
+        ]);
+        
+        $validated['status'] = 'available';
+
+        $animal = Animal::create($validated);
+
+        return redirect('/animal/' . $animal->id)->with('success', 'Repositorio (Animal) creado correctamente.');
     }
 
     public function healthPanel()
     {
         $animales = Animal::all(); // En el futuro filtrar por problemas de salud
         return view('catalogo', compact('animales'))->with('info', 'Panel de Salud en desarrollo.');
+    }
+
+    public function edit($id)
+    {
+        // Solo voluntarios pueden editar
+        if (auth()->user()->role !== 'voluntario') {
+            return redirect('/catalogo')->withErrors(['error' => 'No tienes permiso para editar repositorios.']);
+        }
+
+        $animal = Animal::findOrFail($id);
+        return view('animal-edit', compact('animal'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Solo voluntarios pueden editar
+        if (auth()->user()->role !== 'voluntario') {
+            return redirect('/catalogo')->withErrors(['error' => 'No tienes permiso para editar repositorios.']);
+        }
+
+        $animal = Animal::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'species' => 'required|string|max:255',
+            'breed' => 'nullable|string|max:255',
+            'birth_date' => 'required|date',
+            'sex' => 'required|in:male,female',
+            'health_status' => 'required|string',
+            'description' => 'required|string',
+            'image_path' => 'required|url',
+        ]);
+
+        $animal->update($validated);
+
+        return redirect('/animal/' . $animal->id)->with('success', 'Repositorio (Animal) actualizado correctamente.');
     }
 }

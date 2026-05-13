@@ -86,6 +86,7 @@
                             </ul>
                         </div>
 
+
                         <div class="meta-section">
                             <h3>🏷️ Releases (Historial)</h3>
                             <p><strong>Nacimiento:</strong><br> {{ \Carbon\Carbon::parse($animal->birth_date)->format('d M Y') }}</p>
@@ -94,10 +95,14 @@
 
                     </div>
 
-                    <!-- Botón de adopción al final, centrado -->
+                    <!-- Botón de adopción/edición al final, centrado -->
                     <div class="adoptar-cta">
                         @auth
-                            @if(Auth::user()->role === 'user')
+                            @if(Auth::user()->role === 'voluntario')
+                                <a href="{{ route('animal.edit', $animal->id) }}" class="btn-adoptar-repo btn-editar-repo">
+                                    ⚙️ Edit Repository (Editar)
+                                </a>
+                            @else
                                 <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
                                     Pull Request (Adoptar)
                                 </a>

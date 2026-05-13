@@ -43,8 +43,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/favoritos/toggle/{animal_id}', [App\Http\Controllers\FavoriteController::class, 'toggle'])->name('favoritos.toggle');
     Route::get('/mis-favoritos', [App\Http\Controllers\FavoriteController::class, 'index'])->name('favoritos.index');
 
-    // Gestión de Animales (Admin)
+    // Gestión de Animales (Admin/Voluntario)
     Route::get('/animales/gestion', [AnimalController::class, 'create'])->name('admin.animales.create');
+    Route::post('/animales/gestion', [AnimalController::class, 'store'])->name('admin.animales.store');
+    Route::get('/animal/{id}/edit', [AnimalController::class, 'edit'])->name('animal.edit');
+    Route::put('/animal/{id}', [AnimalController::class, 'update'])->name('animal.update');
     Route::get('/panel-salud', [AnimalController::class, 'healthPanel'])->name('admin.health');
     Route::get('/solicitudes-pendientes', [AdoptionRequestController::class, 'adminIndex'])->name('admin.solicitudes');
 

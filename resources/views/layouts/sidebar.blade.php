@@ -31,7 +31,6 @@
                 <h3 class="mt-0">Organización (Admin)</h3>
                 <ul>
                     <li><a href="/animales/gestion" class="enlace-admin"><span class="plus-icon-admin">+</span> Nuevo Repo</a></li>
-                    <li><a href="/panel-salud" class="enlace-admin"><img src="{{ asset('img/health-green.png') }}" alt="health" class="img-star-inline img-icon-small"> Issues Sanitarios </a></li>
                     <li><a href="/solicitudes-pendientes" class="enlace-admin"><img src="{{ asset('img/mailbox-green.png') }}" alt="mailbox" class="img-star-inline img-icon-small"> Merge Requests</a></li>
                     <li><a href="/tickets" class="enlace-admin"><img src="{{ asset('img/ticket-green.png') }}" alt="tickets" class="img-star-inline img-icon-small"> Tickets</a></li>
                     <li><a href="/perfil"><img src="{{ asset('img/settings-green.png') }}" alt="settings" class="img-star-inline"> Settings</a></li>
