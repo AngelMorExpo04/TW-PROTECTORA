@@ -44,12 +44,12 @@
                             <div class="etiquetas">
                                 <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
                                 <span class="etiqueta">
-                                    @if($animal->status == 'available')
-                                        🟢 Disponible
-                                    @elseif($animal->status == 'in_process')
-                                        🟡 En proceso
-                                    @else
+                                    @if($animal->status == 'adopted')
                                         🔴 Adoptado
+                                    @elseif($animal->adoptionRequests->count() > 0 || $animal->status == 'in_process')
+                                        🟡 Pendiente
+                                    @else
+                                        🟢 Disponible
                                     @endif
                                 </span>
                                 <span class="etiqueta">🎂 {{ \Carbon\Carbon::parse($animal->birth_date)->age }} años</span>

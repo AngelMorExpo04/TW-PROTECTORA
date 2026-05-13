@@ -63,6 +63,15 @@
                             <div class="etiquetas etiquetas-sidebar">
                                 <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
                                 <span class="etiqueta">{{ $animal->sex == 'male' ? 'Macho' : 'Hembra' }}</span>
+                                <span class="etiqueta">
+                                    @if($animal->status == 'adopted')
+                                        🔴 Adoptado
+                                    @elseif($animal->adoptionRequests->count() > 0 || $animal->status == 'in_process')
+                                        🟡 Pendiente
+                                    @else
+                                        🟢 Disponible
+                                    @endif
+                                </span>
                             </div>
                         </div>
 

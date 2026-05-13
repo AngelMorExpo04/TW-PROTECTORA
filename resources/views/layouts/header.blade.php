@@ -18,7 +18,7 @@
         <!-- ZONA DE USUARIO (Ahora está DENTRO del menú) -->
         <div class="zona-usuario">
             @auth
-                <span class="{{ (Auth::user()->role === 'admin' || Auth::user()->role === 'voluntario') ? 'username-admin' : 'username-header' }}">{{ Auth::user()->username }}</span>
+                <span class="{{ (Auth::user()->role === 'voluntario' || Auth::user()->role === 'voluntario') ? 'username-admin' : 'username-header' }}">{{ Auth::user()->username }}</span>
                 <form action="/logout" method="POST" class="d-inline">
                     @csrf
                     <button type="submit" class="btn-logout-red">Cerrar Sesión</button>
@@ -90,7 +90,7 @@
                 <label for="reg-tipo">Tipo de cuenta (Para pruebas)</label>
                 <select id="reg-tipo" name="role" required>
                     <option value="user">Adoptante (Normal)</option>
-                    <option value="admin">Voluntario / Admin</option>
+                    <option value="voluntario">Voluntario / Admin</option>
                 </select>
             </div>
             <div class="form-group">
