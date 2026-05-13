@@ -2734,7 +2734,12 @@ body {
 
 
 /* ESTILOS TABLA TICKETS */
-.tabla-admin { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; border-radius: 8px;
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -2775,7 +2780,7 @@ body {
     .tabla-admin tr {
         display: block;
         margin-bottom: 20px;
-        background: white !important;
+        background: rgba(255, 255, 255, 0);
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
@@ -2876,14 +2881,15 @@ body {
 
     .tabla-admin td:first-child {
         width: 100% !important;
-        background: #f1f3f5 !important;
+        background: #f1f3f500 !important;
         /* Un poco más oscuro para que se vea bien */
         border-bottom: 1px solid #dee2e6 !important;
         margin-bottom: 5px !important;
     }
 }
 
-/* CORRECCIÓN DEFINITIVA ANCHO COMPLETO MÓVIL */ @media (max-width: 768px) { .tabla-admin { background: transparent !important; }
+/* CORRECCIÓN DEFINITIVA ANCHO COMPLETO MÓVIL */
+@media (max-width: 768px) {
 
     .tabla-admin,
     .tabla-admin tbody,
@@ -2896,7 +2902,7 @@ body {
     }
 
     .tabla-admin td {
-        border-bottom: 1px solid #eeeeee00 !important;
+        border-bottom: 1px solid #eee !important;
         padding: 15px !important;
     }
 
@@ -2914,19 +2920,7 @@ body {
         margin-bottom: 5px !important;
     }
 }
-
-
-
-
-
-
-
-
-
-/* MODALES DE CONFIRMACIÓN (NOMBRES ÚNICOS PARA EVITAR CONFLICTOS) */
-.modal-confirm-toggle:checked + .modal-confirm-overlay {
-    display: flex !important;
-}
+/* MODALES DE CONFIRMACIÓN (FIX POSICIONAMIENTO Y ESTILO) */
 .modal-confirm-overlay {
     display: none;
     position: fixed;
@@ -2934,219 +2928,68 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    z-index: 99999;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+    z-index: 99999 !important;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
 }
+.modal-confirm-toggle:checked + .modal-confirm-overlay {
+    display: flex !important;
+}
 .modal-confirm-content {
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    max-width: 450px;
+    background: #4a7c5953 !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 15px !important;
+    padding: 35px 40px !important;
+    max-width: 400px !important;
     width: 100%;
     box-shadow: 0 15px 50px rgba(0,0,0,0.3);
     animation: confirmAppear 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     text-align: center;
-    border: 1px solid rgba(255,255,255,0.2);
 }
 @keyframes confirmAppear {
     from { transform: scale(0.9) translateY(20px); opacity: 0; }
     to { transform: scale(1) translateY(0); opacity: 1; }
 }
 .modal-confirm-content h2 {
-    color: #4A7C59;
-    margin-top: 0;
-    font-size: 1.6rem;
-    font-weight: 800;
-}
-.modal-confirm-content p {
-    color: #444;
-    line-height: 1.6;
-    margin: 20px 0 30px;
-    font-size: 1.05rem;
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 20px !important;
 }
 .modal-confirm-actions {
     display: flex;
     gap: 15px;
     justify-content: center;
-}
-.modal-confirm-actions .btn-principal, .modal-confirm-actions .btn-secundario {
-    padding: 12px 25px;
-    flex: 1;
-    max-width: 160px;
-}
-
-/* AJUSTE ESTÉTICO MODALES CONFIRMACIÓN (MATCH LOGIN) */
-.modal-confirm-overlay {
-    background: rgba(0, 0, 0, 0.5) !important;
-    z-index: 99999 !important;
-}
-.modal-confirm-content {
-    background: #4a7c5953 !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
-    border-radius: 15px !important;
-    padding: 30px 40px !important;
-    max-width: 400px !important;
-}
-.modal-confirm-content h2 {
-    color: white !important;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
-    text-align: center !important;
-    font-size: 1.8rem !important;
-    margin-bottom: 20px !important;
-}
-.modal-confirm-content p {
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 1rem !important;
-    text-align: center !important;
+    margin-top: 25px;
 }
 .modal-confirm-actions .btn-principal, .modal-confirm-actions .btn-secundario {
     background: #1a1a1a !important;
     color: white !important;
     border: none !important;
     border-radius: 8px !important;
-    padding: 12px !important;
     cursor: pointer !important;
-    font-size: 0.9rem !important;
-    transition: background 0.3s !important;
-    text-transform: none !important;
+    flex: 1;
+    height: 45px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-weight: bold;
 }
-.modal-confirm-actions .btn-principal:hover, .modal-confirm-actions .btn-secundario:hover {
-    background: #333333 !important;
-}
-
-/* VARIANTE OSCURA PARA MODAL DE RECHAZO */
 .modal-confirm-negro {
-    background: rgba(15, 15, 15, 0.8) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px) !important;
+    background: rgba(15, 15, 15, 0.4) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
-
-/* BOTONES VERDES PARA EL MODAL OSCURO */
 .modal-confirm-negro .modal-confirm-actions .btn-principal, 
 .modal-confirm-negro .modal-confirm-actions .btn-secundario {
     background: #4A7C59 !important;
-    color: white !important;
 }
-.modal-confirm-negro .modal-confirm-actions .btn-principal:hover, 
-.modal-confirm-negro .modal-confirm-actions .btn-secundario:hover {
-    background: #386044 !important;
-}
-
-/* UNIFICACIÓN DE TAMAÑO Y ALINEACIÓN DE BOTONES EN MODALES */
-.modal-confirm-actions .btn-principal, 
-.modal-confirm-actions .btn-secundario {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 45px !important; /* Altura fija para que sean idénticos */
-    margin: 0 !important;
-    border-radius: 8px !important;
-    box-sizing: border-box !important;
-}
-
-/* AJUSTE DE TRASLUCIDEZ PARA EL MODAL NEGRO */
-.modal-confirm-negro {
-    background: rgba(15, 15, 15, 0.4) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-}
-
-/* UNIFICACIÓN DE BOTONES EN LA LISTA DE SOLICITUDES */
-.solicitud-card .form-actions label {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 38px !important;
-    min-width: 140px !important;
-    margin: 0 !important;
-    font-size: 0.85rem !important;
-    padding: 0 15px !important;
-    box-sizing: border-box !important;
-    border-radius: 6px !important;
-}
-
-/* BOTÓN ROJO PARA CANCELAR EN MODALES */
-.btn-modal-red {
+.modal-confirm-actions .btn-modal-red {
     background: #da3633 !important;
-    color: white !important;
-    border: none !important;
-}
-.btn-modal-red:hover {
-    background: #b62d2a !important;
-}
-
-/* REFUERZO DE COLOR ROJO PARA BOTONES DE CANCELAR */
-.modal-confirm-actions .btn-modal-red, 
-.modal-confirm-actions label.btn-modal-red {
-    background: #da3633 !important;
-    color: white !important;
-    opacity: 1 !important;
-}
-
-/* MÁXIMA PRIORIDAD PARA CANCELAR ROJO EN CUALQUIER MODAL */
-.modal-confirm-content .modal-confirm-actions .btn-modal-red,
-.modal-confirm-negro .modal-confirm-actions .btn-modal-red {
-    background: #da3633 !important;
-    color: white !important;
-}
-
-/* LÓGICA DE EDICIÓN DE SOLICITUDES (MIS PULL REQUESTS) */
-.edit-toggle:checked ~ .solicitud-content { display: none !important; }
-.edit-toggle:checked ~ .solicitud-edit-form { display: block !important; }
-.edit-toggle:not(:checked) ~ .solicitud-edit-form { display: none !important; }
-
-/* UTILIDADES GENERALES EXTRAÍDAS DE BLADE */
-.text-muted { color: #8b949e !important; }
-.flex-gap-10 { display: flex !important; gap: 10px !important; }
-.mt-separator { border-top: 1px solid #eaeaea; margin-top: 60px; padding-top: 40px; }
-.pt-section { padding-top: 20px; margin-top: 40px; }
-.text-danger-github { color: #cf222e !important; }
-.img-icon-small { width: 25px !important; height: 25px !important; }
-.plus-icon-admin { color: #4A7C59; font-weight: bold; font-size: 2rem; margin-right: 8px; vertical-align: middle; line-height: 1; }
-.breadcrumb-link { color: inherit !important; text-decoration: none !important; }
-.breadcrumb-link:hover { text-decoration: underline !important; }
-
-
-.btn-black-github { background: #1a1a1a !important; color: white !important; }
-.btn-black-github:hover { background: #333333 !important; }
-
-
-.btn-danger-github { background: #da3633 !important; color: white !important; border: none !important; }
-.btn-danger-github:hover { background: #b62d2a !important; }
-
-
-/* AJUSTES FINALES BOTONES LISTA SOLICITUDES */
-.solicitud-card .form-actions {
-    padding: 0 20px 20px !important;
-    display: flex !important;
-    gap: 12px !important;
-}
-.solicitud-card .form-actions label {
-    height: 34px !important;
-    min-width: 120px !important;
-    font-size: 0.8rem !important;
-    margin-bottom: 5px !important;
-}
-
-/* AJUSTES PARA MÓVILES MUY PEQUEÑOS EN SOLICITUDES */
-@media (max-width: 480px) {
-    .solicitud-card .form-actions {
-        padding: 0 10px 15px !important;
-        gap: 8px !important;
-    }
-    .solicitud-card .form-actions label {
-        min-width: 90px !important;
-        font-size: 0.75rem !important;
-        padding: 0 8px !important;
-        height: 30px !important;
-    }
 }
