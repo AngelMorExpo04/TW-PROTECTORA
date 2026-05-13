@@ -2993,3 +2993,49 @@ body {
 .modal-confirm-actions .btn-modal-red {
     background: #da3633 !important;
 }
+
+/* AJUSTE FINAL SIMETRÍA Y MÁRGENES BOTONES */
+.solicitud-card .form-actions {
+    padding: 10px 20px 25px !important; /* Más margen abajo (25px) */
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+.solicitud-card .form-actions label {
+    height: 36px !important;
+    width: 110px !important; /* Ancho fijo para simetría total */
+    min-width: 110px !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 0.85rem !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+/* ALINEACIÓN Y TAMAÑO IDÉNTICO BOTONES MODAL */
+.modal-confirm-actions button,
+.modal-confirm-actions label {
+    height: 45px !important;
+    min-width: 160px !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+}
+
+/* FUERZA BRUTA PARA BOTÓN ROJO DE CANCELAR */
+.modal-confirm-overlay div.modal-confirm-actions .btn-modal-red, 
+.modal-confirm-overlay div.modal-confirm-actions label.btn-modal-red {
+    background: #da3633 !important;
+    color: white !important;
+    border: none !important;
+}

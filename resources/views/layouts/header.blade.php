@@ -18,7 +18,7 @@
         <!-- ZONA DE USUARIO (Ahora está DENTRO del menú) -->
         <div class="zona-usuario">
             @auth
-                <span class="{{ (Auth::user()->role === 'voluntario' || Auth::user()->role === 'admin') ? 'username-admin' : 'username-header' }}">{{ Auth::user()->username }}</span>
+                <span class="{{ (Auth::user()->role === 'admin' || Auth::user()->role === 'voluntario') ? 'username-admin' : 'username-header' }}">{{ Auth::user()->username }}</span>
                 <form action="/logout" method="POST" class="d-inline">
                     @csrf
                     <button type="submit" class="btn-logout-red">Cerrar Sesión</button>
@@ -41,7 +41,7 @@
 @if(session('success'))
     <div class="header-alert header-alert-success">
         <p>{{ session('success') }}</p>
-    </div>
+    </div> 
 @endif
 
 <!-- MODALES DE SESIÓN Y REGISTRO (SIN JAVASCRIPT) -->
