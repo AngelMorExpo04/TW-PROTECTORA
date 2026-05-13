@@ -63,3 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/perfil/update', [UserController::class, 'updateProfile'])->name('perfil.update');
     Route::post('/perfil/password', [UserController::class, 'updatePassword'])->name('perfil.password');
 });
+
+Route::get('/about-us', function () { return view('about-us'); });
+
+Route::delete('/animal/{id}', [App\Http\Controllers\AnimalController::class, 'destroy'])->name('animal.destroy');

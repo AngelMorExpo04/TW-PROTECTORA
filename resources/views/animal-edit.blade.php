@@ -125,9 +125,34 @@
                             <a href="/animal/{{ $animal->id }}" class="btn-secundario">Cancel</a>
                         </div>
                     </form>
+
+                    <!-- Botón de Borrado (Limpio y directo) -->
+                    <label for="delete-modal-toggle" class="btn-danger-full" style="cursor: pointer; margin-top: 30px;">Delete this repository</label>
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- MODAL DE CONFIRMACIÓN DE BORRADO (CSS ONLY) -->
+    <input type="checkbox" id="delete-modal-toggle" class="modal-confirm-toggle d-none">
+    <div class="modal-confirm-overlay">
+        <div class="modal-confirm-content modal-confirm-rojo">
+            <div class="modal-header">
+                <h2 style="margin: 0; text-align: center; width: 100%;">¿Estás seguro de que quieres borrarlo?</h2>
+            </div>
+            <div class="modal-body" style="text-align: center; padding: 20px;">
+                <p>Esta acción es <strong>permanente</strong> y no se puede deshacer.</p>
+                <p>Se eliminarán todos los datos de <strong>{{ $animal->name }}</strong>.</p>
+            </div>
+            <div class="modal-confirm-actions" style="display: flex; gap: 12px; justify-content: center; padding-bottom: 10px;">
+                <form action="{{ route('animal.destroy', $animal->id) }}" method="POST" style="margin: 0;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-principal" style="width: 140px; height: 40px; margin: 0; background-color: #2da44e !important; border: 1px solid rgba(27, 31, 36, 0.15) !important;">Aceptar</button>
+                </form>
+                <label for="delete-modal-toggle" class="btn-black" style="width: 140px; height: 40px; margin: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 6px;">Cancelar</label>
+            </div>
+        </div>
     </div>
 
     @include('layouts.footer')

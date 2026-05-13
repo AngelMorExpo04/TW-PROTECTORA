@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte - GuauHub</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+    <meta name="referrer" content="no-referrer">
 </head>
 <body>
 

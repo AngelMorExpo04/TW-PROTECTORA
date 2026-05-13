@@ -101,4 +101,17 @@ class AnimalController extends Controller
 
         return redirect('/animal/' . $animal->id)->with('success', 'Repositorio (Animal) actualizado correctamente.');
     }
+
+    public function destroy($id)
+    {
+        // Solo voluntarios pueden borrar
+        if (auth()->user()->role !== 'voluntario') {
+            return redirect('/catalogo')->withErrors(['error' => 'No tienes permiso para borrar repositorios.']);
+        }
+
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
+
+        return redirect('/catalogo')->with('success', 'Repositorio (Animal) borrado permanentemente.');
+    }
 }
