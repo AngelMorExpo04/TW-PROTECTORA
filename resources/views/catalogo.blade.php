@@ -43,7 +43,7 @@
                         <div class="card-info">
                             <h3>{{ $animal->name }}</h3>
                             <div class="etiquetas">
-                                <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
+                                <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : (strtolower($animal->species) == 'gato' ? '🐱' : '🐾') }} {{ $animal->species }}</span>
                                 <span class="etiqueta">
                                     @if($animal->status == 'adopted')
                                         🔴 Adoptado

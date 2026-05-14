@@ -69,7 +69,7 @@
                     <div class="sidebar-section">
                         <h3>Labels</h3>
                         <span class="etiqueta etiqueta-blue">Adopción</span>
-                        <span class="etiqueta {{ strtolower($animal->species) === 'perro' ? 'etiqueta-green' : 'etiqueta-purple' }}">{{ ucfirst($animal->species) }}</span>
+                        <span class="etiqueta {{ strtolower($animal->species) === 'perro' ? 'etiqueta-green' : (strtolower($animal->species) === 'gato' ? 'etiqueta-purple' : 'etiqueta-blue') }}">{{ ucfirst($animal->species) }}</span>
                     </div>
                 </div>
             </div>

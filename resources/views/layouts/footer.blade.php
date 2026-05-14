@@ -16,6 +16,7 @@
         <!-- Sección 3: Contacto -->
         <div class="footer-seccion">
             <h3>Contacto</h3>
+            <a href="/contacto">Contacto</a><br>
             <p>📧 info@guauhub.com</p>
             <p>📞 +34 900 123 456</p>
             <p>📍 C/ Adopción, 123, Madrid</p>

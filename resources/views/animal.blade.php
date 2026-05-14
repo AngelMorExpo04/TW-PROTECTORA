@@ -62,7 +62,7 @@
                             <h3>About</h3>
                             <p>{{ $animal->breed ?? 'Mestizo' }}.</p>
                             <div class="etiquetas etiquetas-sidebar">
-                                <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
+                                <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : (strtolower($animal->species) == 'gato' ? '🐱' : '🐾') }} {{ $animal->species }}</span>
                                 <span class="etiqueta">{{ $animal->sex == 'male' ? 'Macho' : 'Hembra' }}</span>
                                 <span class="etiqueta">
                                     @if($animal->status == 'adopted')

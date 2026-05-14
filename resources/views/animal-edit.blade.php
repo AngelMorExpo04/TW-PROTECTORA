@@ -76,6 +76,7 @@
                                 <select name="species" required class="input-text">
                                     <option value="Perro" {{ old('species', $animal->species) == 'Perro' ? 'selected' : '' }}>Perro</option>
                                     <option value="Gato" {{ old('species', $animal->species) == 'Gato' ? 'selected' : '' }}>Gato</option>
+                                    <option value="Otro" {{ old('species', $animal->species) == 'Otro' ? 'selected' : '' }}>Otro</option>
                                 </select>
                             </div>
                             <div class="form-group" style="flex: 1;">
@@ -94,7 +95,7 @@
 
                         <div class="form-group">
                             <label>Birth Date (Fecha de Nacimiento)</label>
-                            <input type="date" name="birth_date" value="{{ old('birth_date', \Carbon\Carbon::parse($animal->birth_date)->format('Y-m-d')) }}" required class="input-text">
+                            <input type="date" name="birth_date" value="{{ old('birth_date', \Carbon\Carbon::parse($animal->birth_date)->format('Y-m-d')) }}" max="{{ date('Y-m-d') }}" required class="input-text">
                         </div>
 
                         <div class="form-group">

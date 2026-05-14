@@ -75,6 +75,7 @@
                                     <option value="" disabled {{ old('species') ? '' : 'selected' }}>Selecciona especie</option>
                                     <option value="Perro" {{ old('species') == 'Perro' ? 'selected' : '' }}>Perro</option>
                                     <option value="Gato" {{ old('species') == 'Gato' ? 'selected' : '' }}>Gato</option>
+                                    <option value="Otro" {{ old('species') == 'Otro' ? 'selected' : '' }}>Otro</option>
                                 </select>
                             </div>
                             <div class="form-group" style="flex: 1;">
@@ -94,7 +95,7 @@
 
                         <div class="form-group">
                             <label>Birth Date (Fecha de Nacimiento)</label>
-                            <input type="date" name="birth_date" value="{{ old('birth_date') }}" required class="input-text">
+                            <input type="date" name="birth_date" value="{{ old('birth_date') }}" max="{{ date('Y-m-d') }}" required class="input-text">
                         </div>
 
                         <div class="form-group">

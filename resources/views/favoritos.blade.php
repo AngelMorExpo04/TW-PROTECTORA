@@ -37,7 +37,16 @@
                             <div class="card-info">
                                 <h3>{{ $animal->name }}</h3>
                                 <div class="etiquetas">
-                                    <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : '🐱' }} {{ $animal->species }}</span>
+                                    <span class="etiqueta">{{ strtolower($animal->species) == 'perro' ? '🐶' : (strtolower($animal->species) == 'gato' ? '🐱' : '🐾') }} {{ $animal->species }}</span>
+                                    <span class="etiqueta">
+                                        @if($animal->status == 'adopted')
+                                            🔴 Adoptado
+                                        @elseif($animal->adoptionRequests->count() > 0 || $animal->status == 'in_process')
+                                            🟡 Pendiente
+                                        @else
+                                            🟢 Disponible
+                                        @endif
+                                    </span>
                                     <span class="etiqueta">🎂 {{ \Carbon\Carbon::parse($animal->birth_date)->age }} años</span>
                                 </div>
                                 <p>{{ Str::limit($animal->description, 100) }}</p>
