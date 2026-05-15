@@ -6,7 +6,7 @@ Este proyecto ha sido desarrollado siguiendo los estándares académicos de la a
 
 ---
 
-## Arquitectura Frontend (The "Vanilla" Philosophy)
+## Arquitectura Frontend
 
 Una de las decisiones técnicas más importantes de GuauHub es la **ausencia total de frameworks de terceros como Bootstrap o Tailwind**. Todo el diseño ha sido construido desde cero utilizando **Vanilla CSS**.
 
