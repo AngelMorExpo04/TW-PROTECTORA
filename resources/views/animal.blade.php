@@ -101,7 +101,7 @@
                         @auth
                             @if(Auth::user()->role === 'voluntario')
                                 <a href="{{ route('animal.edit', $animal->id) }}" class="btn-adoptar-repo btn-editar-repo">
-                                    ⚙️ Edit Repository (Editar)
+                                    Edit Repository (Editar)
                                 </a>
                             @else
                                 <a href="/adopcion/{{ $animal->id }}" class="btn-adoptar-repo">
