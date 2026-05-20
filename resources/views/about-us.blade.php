@@ -27,10 +27,10 @@
                     <div class="founder-info">
                         <h3>Angel Moreno</h3>
                         <div class="etiquetas etiquetas-center">
-                            <span class="etiqueta">🚀 Lead Maintainer</span>
+                            <span class="etiqueta"> Lead Maintainer</span>
                         </div>
                         <p>Desarrollador principal y arquitecto de la plataforma GuauHub.</p>
-                        <p class="text-muted small">📧 angelmorexpo@correo.ugr.es</p>
+                        <p class="text-muted small">📧 angelmorexpo@gmail.com</p>
                     </div>
                 </div>
 
@@ -42,10 +42,10 @@
                     <div class="founder-info">
                         <h3>Pablo Ordoñez</h3>
                         <div class="etiquetas etiquetas-center">
-                            <span class="etiqueta">🛠️ Backend Engineer</span>
+                            <span class="etiqueta"> Backend Engineer</span>
                         </div>
                         <p>Encargado de la lógica de servidores, bases de datos y seguridad.</p>
-                        <p class="text-muted small">📧 pablordgom@correo.ugr.es</p>
+                        <p class="text-muted small">📧 pablordgom@gmail.com</p>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                     <div class="founder-info">
                         <h3>Guillermo Moyano</h3>
                         <div class="etiquetas etiquetas-center">
-                            <span class="etiqueta">🎨 UI/UX Designer</span>
+                            <span class="etiqueta"> UI/UX Designer</span>
                         </div>
                         <p>Responsable de la interfaz GitHub-style y la experiencia de usuario.</p>
                         <p class="text-muted small">📧 guillermomoyano@correo.ugr.es</p>

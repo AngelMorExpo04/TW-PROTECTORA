@@ -44,7 +44,7 @@
     </div> 
 @endif
 
-<!-- MODALES DE SESIÓN Y REGISTRO (SIN JAVASCRIPT) -->
+<!-- MODALES DE SESIÓN Y REGISTRO -->
 <input type="checkbox" id="toggle-login" class="css-toggle d-none">
 <div id="modalLogin" class="modal-overlay">
     <label for="toggle-login" class="modal-bg-close"></label>
