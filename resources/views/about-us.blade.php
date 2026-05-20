@@ -30,7 +30,7 @@
                             <span class="etiqueta">🚀 Lead Maintainer</span>
                         </div>
                         <p>Desarrollador principal y arquitecto de la plataforma GuauHub.</p>
-                        <p class="text-muted small">📧 angelmorexpo@gmail.com</p>
+                        <p class="text-muted small">📧 angelmorexpo@correo.ugr.es</p>
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@
                             <span class="etiqueta">🛠️ Backend Engineer</span>
                         </div>
                         <p>Encargado de la lógica de servidores, bases de datos y seguridad.</p>
-                        <p class="text-muted small">📧 pablordgom@gmail.com</p>
+                        <p class="text-muted small">📧 pablordgom@correo.ugr.es</p>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                             <span class="etiqueta">🎨 UI/UX Designer</span>
                         </div>
                         <p>Responsable de la interfaz GitHub-style y la experiencia de usuario.</p>
-                        <p class="text-muted small">📧 guillermomoyano@gmail.com</p>
+                        <p class="text-muted small">📧 guillermomoyano@correo.ugr.es</p>
                     </div>
                 </div>
             </div>

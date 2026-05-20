@@ -5,32 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Repository - GuauHub</title>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <style>
-        .input-text, .textarea-readme {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 2px solid rgba(0, 0, 0, 0.15) !important;
-            border-radius: 6px !important;
-            background-color: #f1f1f1 !important;
-            color: #333 !important;
-            font-family: inherit;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        .input-text:focus, .textarea-readme:focus {
-            border-color: #4A7C59;
-            background-color: #ffffff !important;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.3);
-        }
-        .form-group label {
-            font-weight: bold;
-            color: #333;
-            margin-top: 15px;
-            display: block;
-        }
-    </style>
 </head>
 <body>
 

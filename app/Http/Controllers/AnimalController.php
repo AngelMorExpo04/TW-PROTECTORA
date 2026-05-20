@@ -62,7 +62,7 @@ class AnimalController extends Controller
 
     public function healthPanel()
     {
-        $animales = Animal::all(); // En el futuro filtrar por problemas de salud
+        $animales = Animal::all();
         return view('catalogo', compact('animales'))->with('info', 'Panel de Salud en desarrollo.');
     }
 
